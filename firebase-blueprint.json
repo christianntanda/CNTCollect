@@ -1,0 +1,288 @@
+{
+  "entities": {
+    "organization": {
+      "title": "Organization",
+      "description": "Tenant organization representing the creditor enterprise",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 200 },
+        "legalEntity": { "type": "string", "maxLength": 200 },
+        "registrationNumber": { "type": "string", "maxLength": 100 },
+        "taxId": { "type": "string", "maxLength": 100 },
+        "defaultCurrency": { "type": "string", "maxLength": 10 },
+        "baseLateInterestRate": { "type": "number" },
+        "subscriptionPlan": { "type": "string", "enum": ["starter", "growth", "enterprise"] },
+        "subscriptionStatus": { "type": "string", "enum": ["active", "trialing", "past_due", "canceled"] },
+        "subscriptionPeriodEnd": { "type": "string", "maxLength": 50 },
+        "currentRecoveryVolume": { "type": "number" },
+        "recoveryVolumeLimit": { "type": "number" },
+        "seatsUsed": { "type": "number" },
+        "seatsLimit": { "type": "number" },
+        "ownerUid": { "type": "string", "maxLength": 128 }
+      },
+      "required": ["id", "name", "legalEntity", "defaultCurrency"]
+    },
+    "debtor": {
+      "title": "Debtor",
+      "description": "Corporate debtor or commercial customer owing receivables",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "organizationId": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 200 },
+        "companyNumber": { "type": "string", "maxLength": 100 },
+        "vatNumber": { "type": "string", "maxLength": 100 },
+        "contactName": { "type": "string", "maxLength": 150 },
+        "email": { "type": "string", "maxLength": 200 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "address": { "type": "string", "maxLength": 300 },
+        "country": { "type": "string", "maxLength": 100 },
+        "preferredLanguage": { "type": "string", "enum": ["en", "fr", "es"] },
+        "creditLimit": { "type": "number" },
+        "creditRating": { "type": "number" },
+        "riskTier": { "type": "string", "enum": ["low", "moderate", "high", "critical"] },
+        "paymentTermsDays": { "type": "number" },
+        "dso": { "type": "number" },
+        "averageDaysToPay": { "type": "number" },
+        "totalInvoiced": { "type": "number" },
+        "totalOutstanding": { "type": "number" },
+        "totalOverdue": { "type": "number" },
+        "paymentPortalToken": { "type": "string", "maxLength": 128 },
+        "notes": { "type": "string", "maxLength": 2000 },
+        "createdAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "organizationId", "name", "contactName", "email"]
+    },
+    "invoice": {
+      "title": "Invoice",
+      "description": "Commercial invoice record with line items, overdue metrics, and statutory interest",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "organizationId": { "type": "string", "maxLength": 128 },
+        "debtorId": { "type": "string", "maxLength": 128 },
+        "debtorName": { "type": "string", "maxLength": 200 },
+        "debtorEmail": { "type": "string", "maxLength": 200 },
+        "invoiceNumber": { "type": "string", "maxLength": 100 },
+        "reference": { "type": "string", "maxLength": 100 },
+        "issueDate": { "type": "string", "maxLength": 50 },
+        "dueDate": { "type": "string", "maxLength": 50 },
+        "currency": { "type": "string", "maxLength": 10 },
+        "subtotal": { "type": "number" },
+        "taxAmount": { "type": "number" },
+        "totalAmount": { "type": "number" },
+        "amountPaid": { "type": "number" },
+        "amountDue": { "type": "number" },
+        "status": { "type": "string", "enum": ["draft", "issued", "paid", "partially_paid", "overdue", "disputed", "written_off"] },
+        "daysOverdue": { "type": "number" },
+        "accruedLateInterest": { "type": "number" },
+        "lastReminderSentAt": { "type": "string", "maxLength": 50 },
+        "currentDunningStage": { "type": "string", "maxLength": 100 },
+        "notes": { "type": "string", "maxLength": 2000 }
+      },
+      "required": ["id", "organizationId", "debtorId", "invoiceNumber", "issueDate", "dueDate", "currency", "totalAmount", "amountDue", "status"]
+    },
+    "payment": {
+      "title": "Payment",
+      "description": "Cash receipt and invoice allocation transaction",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "organizationId": { "type": "string", "maxLength": 128 },
+        "debtorId": { "type": "string", "maxLength": 128 },
+        "amount": { "type": "number" },
+        "currency": { "type": "string", "maxLength": 10 },
+        "paymentDate": { "type": "string", "maxLength": 50 },
+        "paymentMethod": { "type": "string", "enum": ["bank_transfer", "direct_debit", "card", "cheque", "other"] },
+        "referenceNumber": { "type": "string", "maxLength": 100 },
+        "recordedBy": { "type": "string", "maxLength": 150 },
+        "notes": { "type": "string", "maxLength": 2000 }
+      },
+      "required": ["id", "organizationId", "debtorId", "amount", "currency", "paymentDate", "paymentMethod", "referenceNumber"]
+    },
+    "dispute": {
+      "title": "Dispute",
+      "description": "Debtor commercial dispute freezing collection workflows",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "organizationId": { "type": "string", "maxLength": 128 },
+        "debtorId": { "type": "string", "maxLength": 128 },
+        "debtorName": { "type": "string", "maxLength": 200 },
+        "invoiceId": { "type": "string", "maxLength": 128 },
+        "invoiceNumber": { "type": "string", "maxLength": 100 },
+        "reason": { "type": "string", "enum": ["pricing_error", "damaged_goods", "incomplete_service", "missing_po", "goods_not_received", "terms_discrepancy", "duplicate_invoice", "other"] },
+        "amountDisputed": { "type": "number" },
+        "currency": { "type": "string", "maxLength": 10 },
+        "status": { "type": "string", "enum": ["open", "under_review", "escalated", "resolved", "rejected"] },
+        "lodgedDate": { "type": "string", "maxLength": 50 },
+        "targetResolutionDate": { "type": "string", "maxLength": 50 },
+        "debtorStatement": { "type": "string", "maxLength": 3000 },
+        "internalNotes": { "type": "string", "maxLength": 3000 },
+        "aiSentiment": { "type": "string", "enum": ["frustrated", "cooperative", "neutral", "belligerent"] },
+        "aiSuggestedAction": { "type": "string", "maxLength": 2000 },
+        "assignedTo": { "type": "string", "maxLength": 150 }
+      },
+      "required": ["id", "organizationId", "debtorId", "invoiceId", "reason", "amountDisputed", "status"]
+    },
+    "promise": {
+      "title": "PromiseToPay",
+      "description": "Debtor commitment to pay an outstanding amount by a specific date",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "organizationId": { "type": "string", "maxLength": 128 },
+        "debtorId": { "type": "string", "maxLength": 128 },
+        "debtorName": { "type": "string", "maxLength": 200 },
+        "invoiceId": { "type": "string", "maxLength": 128 },
+        "invoiceNumber": { "type": "string", "maxLength": 100 },
+        "promisedAmount": { "type": "number" },
+        "promisedDate": { "type": "string", "maxLength": 50 },
+        "currency": { "type": "string", "maxLength": 10 },
+        "status": { "type": "string", "enum": ["pending", "fulfilled", "broken", "cancelled"] },
+        "contactPerson": { "type": "string", "maxLength": 150 },
+        "notes": { "type": "string", "maxLength": 2000 },
+        "createdAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "organizationId", "debtorId", "invoiceId", "promisedAmount", "promisedDate", "status"]
+    },
+    "dunningWorkflow": {
+      "title": "DunningWorkflow",
+      "description": "Multi-stage automated reminder cadence configuration",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "organizationId": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 200 },
+        "description": { "type": "string", "maxLength": 1000 },
+        "isActive": { "type": "boolean" }
+      },
+      "required": ["id", "organizationId", "name", "isActive"]
+    },
+    "communicationLog": {
+      "title": "CommunicationLog",
+      "description": "Outbound collection reminder log and delivery status",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "organizationId": { "type": "string", "maxLength": 128 },
+        "debtorId": { "type": "string", "maxLength": 128 },
+        "debtorName": { "type": "string", "maxLength": 200 },
+        "invoiceId": { "type": "string", "maxLength": 128 },
+        "invoiceNumber": { "type": "string", "maxLength": 100 },
+        "channel": { "type": "string", "enum": ["email", "sms", "whatsapp", "postal", "phone"] },
+        "tone": { "type": "string", "maxLength": 50 },
+        "sentAt": { "type": "string", "maxLength": 50 },
+        "recipient": { "type": "string", "maxLength": 200 },
+        "subject": { "type": "string", "maxLength": 300 },
+        "contentSnippet": { "type": "string", "maxLength": 1000 },
+        "status": { "type": "string", "enum": ["sent", "delivered", "opened", "bounced", "failed"] },
+        "generatedByAi": { "type": "boolean" },
+        "dunningStage": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["id", "organizationId", "debtorId", "channel", "sentAt", "recipient", "status"]
+    },
+    "creditNote": {
+      "title": "CreditNote",
+      "description": "Goodwill adjustments and billing reductions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "organizationId": { "type": "string", "maxLength": 128 },
+        "debtorId": { "type": "string", "maxLength": 128 },
+        "debtorName": { "type": "string", "maxLength": 200 },
+        "creditNoteNumber": { "type": "string", "maxLength": 100 },
+        "issueDate": { "type": "string", "maxLength": 50 },
+        "currency": { "type": "string", "maxLength": 10 },
+        "amount": { "type": "number" },
+        "remainingBalance": { "type": "number" },
+        "reason": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["id", "organizationId", "debtorId", "creditNoteNumber", "amount", "currency"]
+    },
+    "auditLog": {
+      "title": "AuditLog",
+      "description": "Immutable compliance and operational activity event",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "organizationId": { "type": "string", "maxLength": 128 },
+        "timestamp": { "type": "string", "maxLength": 50 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "userName": { "type": "string", "maxLength": 150 },
+        "action": { "type": "string", "maxLength": 100 },
+        "category": { "type": "string", "enum": ["invoice", "payment", "dispute", "promise", "workflow", "system", "auth", "settings"] },
+        "details": { "type": "string", "maxLength": 2000 },
+        "targetId": { "type": "string", "maxLength": 128 },
+        "targetType": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["id", "organizationId", "timestamp", "userId", "userName", "action", "category", "details"]
+    },
+    "user": {
+      "title": "User",
+      "description": "Authorized enterprise user profile and RBAC assignment",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "email": { "type": "string", "maxLength": 200 },
+        "name": { "type": "string", "maxLength": 150 },
+        "role": { "type": "string", "enum": ["admin", "credit_controller", "finance_manager", "viewer"] },
+        "organizationId": { "type": "string", "maxLength": 128 },
+        "isActive": { "type": "boolean" },
+        "createdAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "email", "name", "role", "organizationId"]
+    }
+  },
+  "firestore": {
+    "/organizations/{organizationId}": {
+      "schema": "organization",
+      "description": "Tenant enterprise entity profile, bank details, and subscription config"
+    },
+    "/organizations/{organizationId}/debtors/{debtorId}": {
+      "schema": "debtor",
+      "description": "Commercial debtors and credit scores belonging strictly to this organization"
+    },
+    "/organizations/{organizationId}/invoices/{invoiceId}": {
+      "schema": "invoice",
+      "description": "Accounts receivable invoices owned strictly by this organization"
+    },
+    "/organizations/{organizationId}/payments/{paymentId}": {
+      "schema": "payment",
+      "description": "Allocated and unallocated payment settlements"
+    },
+    "/organizations/{organizationId}/disputes/{disputeId}": {
+      "schema": "dispute",
+      "description": "Invoice disputes logged for this organization"
+    },
+    "/organizations/{organizationId}/promises/{promiseId}": {
+      "schema": "promise",
+      "description": "Promises to pay (PTP) records for this organization"
+    },
+    "/organizations/{organizationId}/dunningWorkflows/{workflowId}": {
+      "schema": "dunningWorkflow",
+      "description": "Cadence rules and reminder escalation workflows"
+    },
+    "/organizations/{organizationId}/communications/{commId}": {
+      "schema": "communicationLog",
+      "description": "Outbound collection message trail"
+    },
+    "/organizations/{organizationId}/creditNotes/{creditNoteId}": {
+      "schema": "creditNote",
+      "description": "Credit notes and goodwill adjustments"
+    },
+    "/organizations/{organizationId}/auditLogs/{logId}": {
+      "schema": "auditLog",
+      "description": "Immutable compliance and operational audit log entries"
+    },
+    "/organizations/{organizationId}/users/{userId}": {
+      "schema": "user",
+      "description": "Organization membership and role assignments"
+    },
+    "/users/{userId}": {
+      "schema": "user",
+      "description": "Global user authentication mapping to organization tenancy and permissions"
+    }
+  }
+}

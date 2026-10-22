@@ -1,0 +1,6 @@
+{
+  "name": "CNTCollect - AI Accounts Receivable & Payment Recovery",
+  "description": "Enterprise-grade, multilingual Accounts Receivable and Payment Recovery Operating Platform. Automate debtor workflows, forecast collections, resolve disputes, and accelerate cash recovery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

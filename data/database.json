@@ -1,0 +1,3384 @@
+{
+  "organizations": [
+    {
+      "id": "org-acme-uk",
+      "name": "Acme Logistics & Distribution Ltd",
+      "legalEntity": "Acme Logistics UK Limited",
+      "registrationNumber": "GB-10293847",
+      "taxId": "GB982341567",
+      "defaultCurrency": "GBP",
+      "baseLateInterestRate": 8.5,
+      "bankDetails": {
+        "bankName": "Barclays Corporate Banking London",
+        "accountName": "Acme Logistics Collections Client Account",
+        "iban": "GB82BARC20000087654321",
+        "swiftBic": "BARCGB22XXX",
+        "paymentInstructions": "Please quote invoice number as payment reference. SEPA and Faster Payments accepted."
+      },
+      "subscriptionPlan": "growth",
+      "subscriptionStatus": "active",
+      "subscriptionPeriodEnd": "2026-12-31",
+      "currentRecoveryVolume": 248500,
+      "recoveryVolumeLimit": 500000,
+      "seatsUsed": 4,
+      "seatsLimit": 10
+    },
+    {
+      "id": "org-nexura-fr",
+      "name": "Nexura Cloud Solutions SAS",
+      "legalEntity": "Nexura Cloud Solutions Société par Actions Simplifiée",
+      "registrationNumber": "FR-889123456",
+      "taxId": "FR34889123456",
+      "defaultCurrency": "EUR",
+      "baseLateInterestRate": 10,
+      "bankDetails": {
+        "bankName": "BNP Paribas Corporate Paris",
+        "accountName": "Nexura Cloud Recouvrement Débiteurs",
+        "iban": "FR7630004000010023456789043",
+        "swiftBic": "BNPAFR21XXX",
+        "paymentInstructions": "Virement bancaire immédiat ou prélèvement SEPA. Mentionner le N° de facture obligatoire."
+      },
+      "subscriptionPlan": "enterprise",
+      "subscriptionStatus": "active",
+      "subscriptionPeriodEnd": "2027-04-30",
+      "currentRecoveryVolume": 612000,
+      "recoveryVolumeLimit": 2000000,
+      "seatsUsed": 9,
+      "seatsLimit": 25
+    }
+  ],
+  "debtors": [
+    {
+      "id": "deb-1792334456863-21",
+      "organizationId": "org-acme-uk",
+      "name": "Apex Retail Holdings PLC",
+      "customerType": "business",
+      "customerReference": "CUST-001",
+      "email": "billing@apexretailholdingsplc.com",
+      "telephone": "+44 20 7946 0000",
+      "country": "United Kingdom",
+      "paymentTermsDays": 30,
+      "creditLimit": 50000,
+      "defaultCurrency": "GBP",
+      "accountStatus": "active",
+      "riskTier": "moderate",
+      "dso": 30,
+      "averageDaysToPay": 30,
+      "totalInvoiced": 1500,
+      "totalOutstanding": 1500,
+      "totalOverdue": 0,
+      "overdueInvoiceCount": 0,
+      "behaviorAnalysis": {
+        "latePaymentFrequency": "rare",
+        "averageHistoricalDelayDays": 0,
+        "overdueInvoiceCount": 0,
+        "balanceTrend": "stable",
+        "brokenPromisesCount": 0,
+        "disputeFrequencyRate": 0,
+        "daysSinceLastPayment": 0,
+        "partialPaymentTendency": "none",
+        "transparentRuleExplanation": [
+          "Record automatically provisioned via spreadsheet invoice import."
+        ],
+        "riskTier": "moderate"
+      },
+      "paymentPortalToken": "tok_h3chtss",
+      "createdAt": "2026-10-18"
+    },
+    {
+      "id": "deb-1",
+      "organizationId": "org-acme-uk",
+      "name": "Apex Retail Group plc",
+      "companyNumber": "UK-09823122",
+      "vatNumber": "GB445678123",
+      "contactName": "Marcus Vance (Finance Director)",
+      "email": "accounts.payable@apexretailgroup.co.uk",
+      "phone": "+44 20 7946 0912",
+      "address": "45 High Holborn, London WC1V 7RL, United Kingdom",
+      "country": "United Kingdom",
+      "preferredLanguage": "en",
+      "creditLimit": 75000,
+      "creditRating": 48,
+      "riskTier": "high",
+      "paymentTermsDays": 30,
+      "dso": 58,
+      "averageDaysToPay": 52,
+      "totalInvoiced": 48250,
+      "totalOutstanding": 48250,
+      "totalOverdue": 34100,
+      "paymentPortalToken": "tok_apex_9812a",
+      "notes": "Historically delays settlement until 3rd dunning stage. Currently reviewing bulk discount terms.",
+      "createdAt": "2025-01-15"
+    },
+    {
+      "id": "deb-2",
+      "organizationId": "org-acme-uk",
+      "name": "Vortex Digital Agency Ltd",
+      "companyNumber": "UK-12498201",
+      "vatNumber": "GB890123456",
+      "contactName": "Sarah Jenkins (Operations Lead)",
+      "email": "billing@vortexdigital.co.uk",
+      "phone": "+44 161 496 0184",
+      "address": "12 Deansgate, Manchester M3 2BW, United Kingdom",
+      "country": "United Kingdom",
+      "preferredLanguage": "en",
+      "creditLimit": 30000,
+      "creditRating": 82,
+      "riskTier": "low",
+      "paymentTermsDays": 30,
+      "dso": 28,
+      "averageDaysToPay": 29,
+      "totalInvoiced": 8400,
+      "totalOutstanding": 8400,
+      "totalOverdue": 8400,
+      "paymentPortalToken": "tok_vortex_7712b",
+      "notes": "Punctual payer with auto-reconciliation enabled.",
+      "createdAt": "2025-02-10"
+    },
+    {
+      "id": "deb-3",
+      "organizationId": "org-acme-uk",
+      "name": "Nordic Supply Chain AB",
+      "companyNumber": "SE-556123-4567",
+      "vatNumber": "SE556123456701",
+      "contactName": "Lars Lindqvist (Treasury Manager)",
+      "email": "invoices@nordicsupply.se",
+      "phone": "+46 8 123 4567",
+      "address": "Sveavägen 44, 111 34 Stockholm, Sweden",
+      "country": "Sweden",
+      "preferredLanguage": "en",
+      "creditLimit": 120000,
+      "creditRating": 64,
+      "riskTier": "moderate",
+      "paymentTermsDays": 45,
+      "dso": 49,
+      "averageDaysToPay": 46,
+      "totalInvoiced": 30000,
+      "totalOutstanding": 26500,
+      "totalOverdue": 26500,
+      "paymentPortalToken": "tok_nordic_5531c",
+      "notes": "Requires exact PO matching on all transport manifests.",
+      "createdAt": "2025-03-01"
+    },
+    {
+      "id": "deb-4",
+      "organizationId": "org-acme-uk",
+      "name": "Horizon Medical Equipment Ltd",
+      "companyNumber": "UK-07712398",
+      "vatNumber": "GB112233445",
+      "contactName": "Dr. Arthur Pendelton",
+      "email": "ap@horizonmed.co.uk",
+      "phone": "+44 113 496 0992",
+      "address": "7 Leeds Innovation Park, Leeds LS2 9JT, United Kingdom",
+      "country": "United Kingdom",
+      "preferredLanguage": "en",
+      "creditLimit": 50000,
+      "creditRating": 32,
+      "riskTier": "critical",
+      "paymentTermsDays": 30,
+      "dso": 94,
+      "averageDaysToPay": 86,
+      "totalInvoiced": 38600,
+      "totalOutstanding": 38600,
+      "totalOverdue": 38600,
+      "paymentPortalToken": "tok_horizon_3341d",
+      "notes": "Two broken promises to pay recorded. Escalation to Legal pre-action pending.",
+      "createdAt": "2025-01-20"
+    },
+    {
+      "id": "deb-5",
+      "organizationId": "org-nexura-fr",
+      "name": "Boulangerie Industrielle & Cie SA",
+      "companyNumber": "FR-442198001",
+      "vatNumber": "FR12442198001",
+      "contactName": "Éléonore Dupuis (DAF)",
+      "email": "comptabilite@boulangerie-cie.fr",
+      "phone": "+33 1 42 68 55 00",
+      "address": "88 Avenue des Champs-Élysées, 75008 Paris, France",
+      "country": "France",
+      "preferredLanguage": "fr",
+      "creditLimit": 150000,
+      "creditRating": 54,
+      "riskTier": "moderate",
+      "paymentTermsDays": 45,
+      "dso": 52,
+      "averageDaysToPay": 49,
+      "totalInvoiced": 340000,
+      "totalOutstanding": 76500,
+      "totalOverdue": 31200,
+      "paymentPortalToken": "tok_boulangerie_9912e",
+      "notes": "Règle par virement mensuel groupé. Litige mineur sur frais de stockage en cours.",
+      "createdAt": "2025-02-01"
+    },
+    {
+      "id": "deb-6",
+      "organizationId": "org-nexura-fr",
+      "name": "Iberica Distribución y Logística SL",
+      "companyNumber": "ES-B84920192",
+      "vatNumber": "ESB84920192",
+      "contactName": "Carlos Mendoza (Director Financiero)",
+      "email": "pagos@ibericadistribucion.es",
+      "phone": "+34 91 590 1234",
+      "address": "Paseo de la Castellana 110, 28046 Madrid, Spain",
+      "country": "Spain",
+      "preferredLanguage": "es",
+      "creditLimit": 90000,
+      "creditRating": 41,
+      "riskTier": "high",
+      "paymentTermsDays": 60,
+      "dso": 78,
+      "averageDaysToPay": 72,
+      "totalInvoiced": 180000,
+      "totalOutstanding": 64200,
+      "totalOverdue": 42100,
+      "paymentPortalToken": "tok_iberica_8821f",
+      "notes": "Convenio de pago propuesto. Requiere seguimiento quincenal.",
+      "createdAt": "2025-02-15"
+    }
+  ],
+  "invoices": [
+    {
+      "id": "inv-1792334456863-0",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-1792334456863-21",
+      "debtorName": "Apex Retail Holdings PLC",
+      "debtorEmail": "billing@apexretailholdingsplc.com",
+      "invoiceNumber": "INV-TEST-001",
+      "reference": "",
+      "purchaseOrderRef": "",
+      "externalAccountingRef": "EXT-INV-TEST-001",
+      "issueDate": "2026-10-01",
+      "dueDate": "2026-10-31",
+      "currency": "GBP",
+      "subtotal": 1249.95,
+      "taxAmount": 250.05,
+      "totalAmount": 1500,
+      "originalAmount": 1500,
+      "amountPaid": 0,
+      "amountDue": 1500,
+      "paymentTermsDays": 30,
+      "description": "Imported Commercial Invoice INV-TEST-001",
+      "invoiceDocument": {
+        "id": "doc-imp-1792334456863-0",
+        "name": "INV-TEST-001.pdf",
+        "size": "1.2 MB",
+        "uploadedAt": "2026-10-01"
+      },
+      "internalNotes": "Imported via batch BATCH-TEST-01 (Test_Import.csv)",
+      "notes": "Imported via batch BATCH-TEST-01 (Test_Import.csv)",
+      "status": "issued",
+      "financialStatus": "unpaid",
+      "ageingStatus": "current",
+      "disputeStatus": "none",
+      "collectionStatus": "active_cadence",
+      "source": "csv_import",
+      "createdBy": "Test Runner",
+      "createdAt": "2026-10-18 14:40:56",
+      "updatedAt": "2026-10-18 14:40:56",
+      "lineItems": [
+        {
+          "id": "li-1792334456863-0",
+          "description": "Imported Goods / Professional Services",
+          "quantity": 1,
+          "unitPrice": 1500,
+          "taxRate": 20,
+          "total": 1500
+        }
+      ],
+      "daysOverdue": 0,
+      "accruedLateInterest": 0,
+      "lastCollectionActivity": {
+        "date": "2026-10-01",
+        "type": "Spreadsheet Batch Ingested",
+        "summary": "Imported into ledger from Test_Import.csv (Batch BATCH-TEST-01)",
+        "performedBy": "Test Runner"
+      },
+      "assignedCreditControllerName": "Sarah Miller",
+      "nextReminderDate": "2026-10-21"
+    },
+    {
+      "id": "inv-101",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-1",
+      "debtorName": "Apex Retail Group plc",
+      "debtorEmail": "accounts.payable@apexretailgroup.co.uk",
+      "invoiceNumber": "INV-2026-0891",
+      "reference": "PO-APX-8821-REV1",
+      "issueDate": "2026-07-15",
+      "dueDate": "2026-08-14",
+      "currency": "GBP",
+      "subtotal": 18500,
+      "taxAmount": 3700,
+      "totalAmount": 22200,
+      "amountPaid": 0,
+      "amountDue": 22200,
+      "status": "overdue",
+      "lineItems": [
+        {
+          "id": "li-1",
+          "description": "Enterprise Freight Transport - Zone 1 UK",
+          "quantity": 15,
+          "unitPrice": 1000,
+          "taxRate": 20,
+          "total": 18000
+        },
+        {
+          "id": "li-2",
+          "description": "Fuel Surcharge & Handling",
+          "quantity": 1,
+          "unitPrice": 500,
+          "taxRate": 20,
+          "total": 600
+        }
+      ],
+      "daysOverdue": 69,
+      "accruedLateInterest": 356.72,
+      "lastReminderSentAt": "2026-10-17",
+      "currentDunningStage": "Legal Pre-Action (Stage 6)",
+      "notes": "Customer acknowledging receipt. Escalated to credit manager.",
+      "assignedCreditControllerName": "Sarah Miller",
+      "updatedAt": "2026-10-18 14:23:15",
+      "originalAmount": 22200,
+      "source": "manual",
+      "purchaseOrderRef": "PO-APX-8821-REV1",
+      "paymentTermsDays": 30,
+      "description": "Enterprise Freight Transport - Zone 1 UK",
+      "externalAccountingRef": "XERO-INV-99881",
+      "createdBy": "Billing Specialist",
+      "createdAt": "2026-07-15 09:00:00",
+      "invoiceDocument": {
+        "id": "doc-inv-101",
+        "name": "INV-2026-0891.pdf",
+        "size": "1.4 MB",
+        "uploadedAt": "2026-07-15"
+      },
+      "ageingStatus": "overdue",
+      "financialStatus": "unpaid",
+      "disputeStatus": "none",
+      "collectionStatus": "active_cadence",
+      "nextReminderDate": "2026-10-21",
+      "lastCollectionActivity": {
+        "date": "2026-10-17",
+        "type": "Demand Notice",
+        "summary": "Legal Pre-Action (Stage 6)",
+        "performedBy": "Sarah Miller"
+      }
+    },
+    {
+      "id": "inv-102",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-1",
+      "debtorName": "Apex Retail Group plc",
+      "debtorEmail": "accounts.payable@apexretailgroup.co.uk",
+      "invoiceNumber": "INV-2026-0945",
+      "reference": "PO-APX-9012",
+      "issueDate": "2026-08-20",
+      "dueDate": "2026-09-19",
+      "currency": "GBP",
+      "subtotal": 9916.67,
+      "taxAmount": 1983.33,
+      "totalAmount": 11900,
+      "amountPaid": 0,
+      "amountDue": 11900,
+      "status": "overdue",
+      "lineItems": [
+        {
+          "id": "li-3",
+          "description": "Dedicated Fleet Linehaul Dispatch",
+          "quantity": 5,
+          "unitPrice": 1983.33,
+          "taxRate": 20,
+          "total": 11900
+        }
+      ],
+      "daysOverdue": 33,
+      "accruedLateInterest": 91.45,
+      "lastReminderSentAt": "2026-10-17",
+      "currentDunningStage": "Urgent Escalation (Stage 4)",
+      "notes": "Promise to pay logged for end of month.",
+      "originalAmount": 11900,
+      "source": "manual",
+      "purchaseOrderRef": "PO-APX-9012",
+      "paymentTermsDays": 30,
+      "description": "Dedicated Fleet Linehaul Dispatch",
+      "externalAccountingRef": "EXT-2026-0945",
+      "createdBy": "Billing Specialist",
+      "createdAt": "2026-08-20 09:00:00",
+      "updatedAt": "2026-10-18 14:23:08",
+      "assignedCreditControllerName": "Sarah Miller",
+      "invoiceDocument": {
+        "id": "doc-inv-102",
+        "name": "INV-2026-0945.pdf",
+        "size": "1.4 MB",
+        "uploadedAt": "2026-08-20"
+      },
+      "ageingStatus": "overdue",
+      "financialStatus": "unpaid",
+      "disputeStatus": "none",
+      "collectionStatus": "active_cadence",
+      "nextReminderDate": "2026-10-21",
+      "lastCollectionActivity": {
+        "date": "2026-10-17",
+        "type": "Invoice Dispatched",
+        "summary": "Urgent Escalation (Stage 4)",
+        "performedBy": "Sarah Miller"
+      }
+    },
+    {
+      "id": "inv-103",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-1",
+      "debtorName": "Apex Retail Group plc",
+      "debtorEmail": "accounts.payable@apexretailgroup.co.uk",
+      "invoiceNumber": "INV-2026-1022",
+      "reference": "PO-APX-9440",
+      "issueDate": "2026-09-25",
+      "dueDate": "2026-10-25",
+      "currency": "GBP",
+      "subtotal": 11791.67,
+      "taxAmount": 2358.33,
+      "totalAmount": 14150,
+      "amountPaid": 0,
+      "amountDue": 14150,
+      "status": "issued",
+      "lineItems": [
+        {
+          "id": "li-4",
+          "description": "Palletized Storage & Fulfillment (Sep 2026)",
+          "quantity": 1,
+          "unitPrice": 11791.67,
+          "taxRate": 20,
+          "total": 14150
+        }
+      ],
+      "daysOverdue": 0,
+      "accruedLateInterest": 0,
+      "currentDunningStage": "Upcoming Due Reminder",
+      "originalAmount": 14150,
+      "source": "manual",
+      "purchaseOrderRef": "PO-APX-9440",
+      "paymentTermsDays": 30,
+      "description": "Palletized Storage & Fulfillment (Sep 2026)",
+      "externalAccountingRef": "EXT-2026-1022",
+      "createdBy": "Billing Specialist",
+      "createdAt": "2026-09-25 09:00:00",
+      "updatedAt": "2026-10-18 14:23:08",
+      "assignedCreditControllerName": "Sarah Miller",
+      "invoiceDocument": {
+        "id": "doc-inv-103",
+        "name": "INV-2026-1022.pdf",
+        "size": "1.4 MB",
+        "uploadedAt": "2026-09-25"
+      },
+      "ageingStatus": "current",
+      "financialStatus": "unpaid",
+      "disputeStatus": "none",
+      "collectionStatus": "active_cadence",
+      "nextReminderDate": "2026-10-21",
+      "lastCollectionActivity": {
+        "date": "2026-09-25",
+        "type": "Invoice Dispatched",
+        "summary": "Upcoming Due Reminder",
+        "performedBy": "Sarah Miller"
+      }
+    },
+    {
+      "id": "inv-104",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-2",
+      "debtorName": "Vortex Digital Agency Ltd",
+      "debtorEmail": "billing@vortexdigital.co.uk",
+      "invoiceNumber": "INV-2026-1011",
+      "reference": "PO-VTX-331",
+      "issueDate": "2026-09-20",
+      "dueDate": "2026-10-20",
+      "currency": "GBP",
+      "subtotal": 7000,
+      "taxAmount": 1400,
+      "totalAmount": 8400,
+      "amountPaid": 0,
+      "amountDue": 8400,
+      "status": "overdue",
+      "lineItems": [
+        {
+          "id": "li-5",
+          "description": "Cloud Data Storage & Transit Services",
+          "quantity": 1,
+          "unitPrice": 7000,
+          "taxRate": 20,
+          "total": 8400
+        }
+      ],
+      "daysOverdue": 2,
+      "accruedLateInterest": 3.91,
+      "originalAmount": 8400,
+      "source": "manual",
+      "purchaseOrderRef": "PO-VTX-331",
+      "paymentTermsDays": 30,
+      "description": "Cloud Data Storage & Transit Services",
+      "externalAccountingRef": "EXT-2026-1011",
+      "createdBy": "Billing Specialist",
+      "createdAt": "2026-09-20 09:00:00",
+      "updatedAt": "2026-10-18 14:23:08",
+      "assignedCreditControllerName": "Sarah Miller",
+      "invoiceDocument": {
+        "id": "doc-inv-104",
+        "name": "INV-2026-1011.pdf",
+        "size": "1.4 MB",
+        "uploadedAt": "2026-09-20"
+      },
+      "ageingStatus": "overdue",
+      "financialStatus": "unpaid",
+      "disputeStatus": "none",
+      "collectionStatus": "active_cadence",
+      "nextReminderDate": "2026-10-21",
+      "lastCollectionActivity": {
+        "date": "2026-09-20",
+        "type": "Invoice Dispatched",
+        "summary": "Routine cadence delivery",
+        "performedBy": "Sarah Miller"
+      }
+    },
+    {
+      "id": "inv-105",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-3",
+      "debtorName": "Nordic Supply Chain AB",
+      "debtorEmail": "invoices@nordicsupply.se",
+      "invoiceNumber": "INV-2026-0810",
+      "reference": "PO-NSC-4412",
+      "issueDate": "2026-07-01",
+      "dueDate": "2026-08-15",
+      "currency": "GBP",
+      "subtotal": 25000,
+      "taxAmount": 5000,
+      "totalAmount": 30000,
+      "amountPaid": 0,
+      "amountDue": 26500,
+      "status": "disputed",
+      "lineItems": [
+        {
+          "id": "li-6",
+          "description": "Cross-border Scandinavian Logistics Corridor",
+          "quantity": 2,
+          "unitPrice": 12500,
+          "taxRate": 20,
+          "total": 30000
+        }
+      ],
+      "daysOverdue": 68,
+      "accruedLateInterest": 419.64,
+      "disputeId": "disp-01",
+      "currentDunningStage": "Paused (Dispute Open)",
+      "notes": "Dispute lodged: Consignment temperature logs requested.",
+      "originalAmount": 30000,
+      "source": "manual",
+      "purchaseOrderRef": "PO-NSC-4412",
+      "paymentTermsDays": 30,
+      "description": "Cross-border Scandinavian Logistics Corridor",
+      "externalAccountingRef": "EXT-2026-0810",
+      "createdBy": "Billing Specialist",
+      "createdAt": "2026-07-01 09:00:00",
+      "updatedAt": "2026-10-18 14:23:08",
+      "assignedCreditControllerName": "Sarah Miller",
+      "invoiceDocument": {
+        "id": "doc-inv-105",
+        "name": "INV-2026-0810.pdf",
+        "size": "1.4 MB",
+        "uploadedAt": "2026-07-01"
+      },
+      "ageingStatus": "overdue",
+      "financialStatus": "unpaid",
+      "disputeStatus": "open",
+      "collectionStatus": "paused_pending_review",
+      "lastCollectionActivity": {
+        "date": "2026-07-01",
+        "type": "Demand Notice",
+        "summary": "Paused (Dispute Open)",
+        "performedBy": "Sarah Miller"
+      }
+    },
+    {
+      "id": "inv-106",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-4",
+      "debtorName": "Horizon Medical Equipment Ltd",
+      "debtorEmail": "ap@horizonmed.co.uk",
+      "invoiceNumber": "INV-2026-0612",
+      "reference": "PO-HME-1002",
+      "issueDate": "2026-05-10",
+      "dueDate": "2026-06-09",
+      "currency": "GBP",
+      "subtotal": 32166.67,
+      "taxAmount": 6433.33,
+      "totalAmount": 38600,
+      "amountPaid": 0,
+      "amountDue": 38600,
+      "status": "overdue",
+      "lineItems": [
+        {
+          "id": "li-7",
+          "description": "Precision Medical Transport & Specialized Handling",
+          "quantity": 1,
+          "unitPrice": 32166.67,
+          "taxRate": 20,
+          "total": 38600
+        }
+      ],
+      "daysOverdue": 135,
+      "accruedLateInterest": 1213.52,
+      "lastReminderSentAt": "2026-10-17",
+      "currentDunningStage": "Legal Pre-Action (Stage 6)",
+      "notes": "Critical risk. Manager sign-off approved for legal recovery.",
+      "originalAmount": 38600,
+      "source": "manual",
+      "purchaseOrderRef": "PO-HME-1002",
+      "paymentTermsDays": 30,
+      "description": "Precision Medical Transport & Specialized Handling",
+      "externalAccountingRef": "EXT-2026-0612",
+      "createdBy": "Billing Specialist",
+      "createdAt": "2026-05-10 09:00:00",
+      "updatedAt": "2026-10-18 14:23:08",
+      "assignedCreditControllerName": "Sarah Miller",
+      "invoiceDocument": {
+        "id": "doc-inv-106",
+        "name": "INV-2026-0612.pdf",
+        "size": "1.4 MB",
+        "uploadedAt": "2026-05-10"
+      },
+      "ageingStatus": "overdue",
+      "financialStatus": "unpaid",
+      "disputeStatus": "none",
+      "collectionStatus": "escalated_to_legal",
+      "nextReminderDate": "2026-10-21",
+      "lastCollectionActivity": {
+        "date": "2026-10-17",
+        "type": "Demand Notice",
+        "summary": "Legal Pre-Action (Stage 6)",
+        "performedBy": "Sarah Miller"
+      }
+    },
+    {
+      "id": "inv-201",
+      "organizationId": "org-nexura-fr",
+      "debtorId": "deb-5",
+      "debtorName": "Boulangerie Industrielle & Cie SA",
+      "debtorEmail": "comptabilite@boulangerie-cie.fr",
+      "invoiceNumber": "FACT-2026-0412",
+      "reference": "BC-2026-778",
+      "issueDate": "2026-07-20",
+      "dueDate": "2026-09-03",
+      "currency": "EUR",
+      "subtotal": 26000,
+      "taxAmount": 5200,
+      "totalAmount": 31200,
+      "amountPaid": 0,
+      "amountDue": 31200,
+      "status": "overdue",
+      "lineItems": [
+        {
+          "id": "li-8",
+          "description": "Abonnement Cloud Infrastructure Haute Disponibilité",
+          "quantity": 1,
+          "unitPrice": 26000,
+          "taxRate": 20,
+          "total": 31200
+        }
+      ],
+      "daysOverdue": 44,
+      "accruedLateInterest": 376.11,
+      "lastReminderSentAt": "2026-10-08",
+      "currentDunningStage": "Mise en demeure (Étape 4)",
+      "notes": "Promesse de règlement pour le 25 octobre."
+    },
+    {
+      "id": "inv-202",
+      "organizationId": "org-nexura-fr",
+      "debtorId": "deb-6",
+      "debtorName": "Iberica Distribución y Logística SL",
+      "debtorEmail": "pagos@ibericadistribucion.es",
+      "invoiceNumber": "FACT-2026-0390",
+      "reference": "PED-IB-9912",
+      "issueDate": "2026-06-15",
+      "dueDate": "2026-08-14",
+      "currency": "EUR",
+      "subtotal": 35083.33,
+      "taxAmount": 7016.67,
+      "totalAmount": 42100,
+      "amountPaid": 0,
+      "amountDue": 42100,
+      "status": "overdue",
+      "lineItems": [
+        {
+          "id": "li-9",
+          "description": "Licencias Empresariales SaaS & Soporte 24/7",
+          "quantity": 1,
+          "unitPrice": 35083.33,
+          "taxRate": 20,
+          "total": 42100
+        }
+      ],
+      "daysOverdue": 64,
+      "accruedLateInterest": 738.19,
+      "lastReminderSentAt": "2026-10-11",
+      "currentDunningStage": "Requerimiento Formal (Etapa 4)",
+      "notes": "Enlace de portal compartido para pago fraccionado."
+    }
+  ],
+  "payments": [
+    {
+      "id": "pay-001",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-3",
+      "debtorName": "Nordic Supply Chain AB",
+      "amount": 8000,
+      "currency": "GBP",
+      "paymentDate": "2026-09-12",
+      "paymentMethod": "bank_transfer",
+      "referenceNumber": "SEPA-TRX-9981204",
+      "allocations": [
+        {
+          "invoiceId": "inv-105",
+          "invoiceNumber": "INV-2026-0810",
+          "allocatedAmount": 8000
+        }
+      ],
+      "recordedBy": "Senior Credit Controller",
+      "notes": "Partial payment on disputed invoice pending resolution.",
+      "reversalStatus": "reversed",
+      "reversedAt": "2026-10-18 14:40:44",
+      "reversalReason": "Direct debit indemnity clawback notice from bank",
+      "reversedBy": "David Chen (Finance Manager)"
+    },
+    {
+      "id": "pay-002",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-2",
+      "debtorName": "Vortex Digital Agency Ltd",
+      "amount": 14200,
+      "currency": "GBP",
+      "paymentDate": "2026-09-28",
+      "paymentMethod": "stripe",
+      "referenceNumber": "ch_3M829104882193",
+      "allocations": [
+        {
+          "invoiceId": "inv-prev-1",
+          "invoiceNumber": "INV-2026-0740",
+          "allocatedAmount": 14200
+        }
+      ],
+      "recordedBy": "Self-Service Debtor Portal",
+      "notes": "Instant settlement via card on payment portal."
+    }
+  ],
+  "disputes": [
+    {
+      "id": "disp-01",
+      "organizationId": "org-acme-uk",
+      "invoiceId": "inv-105",
+      "invoiceNumber": "INV-2026-0810",
+      "debtorId": "deb-3",
+      "debtorName": "Nordic Supply Chain AB",
+      "amountDisputed": 22000,
+      "reason": "service_incomplete",
+      "status": "under_review",
+      "lodgedDate": "2026-09-01",
+      "targetResolutionDate": "2026-10-22",
+      "debtorStatement": "Shipment #4412 experienced a 48h delay at Gothenburg terminal resulting in penalty from retail end-client. We request a credit note of £4,500 before settling remaining balance.",
+      "internalNotes": "Logistics team verifying driver log. Partial credit note may be justified.",
+      "aiSentiment": "frustrated",
+      "aiSuggestedAction": "Provide GPS telematics summary and propose 10% goodwill concession on demurrage while confirming £17,500 wire payment.",
+      "assignedTo": "Oliver Stone (Credit Operations)"
+    }
+  ],
+  "promises": [
+    {
+      "id": "ptp-01",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-1",
+      "debtorName": "Apex Retail Group plc",
+      "invoiceId": "inv-102",
+      "invoiceNumber": "INV-2026-0945",
+      "promisedAmount": 11900,
+      "promisedDate": "2026-10-24",
+      "currency": "GBP",
+      "status": "pending",
+      "contactPerson": "Marcus Vance",
+      "notes": "Agreed in telephone conference following firm overdue notice.",
+      "createdAt": "2026-10-12"
+    },
+    {
+      "id": "ptp-02",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-4",
+      "debtorName": "Horizon Medical Equipment Ltd",
+      "invoiceId": "inv-106",
+      "invoiceNumber": "INV-2026-0612",
+      "promisedAmount": 15000,
+      "promisedDate": "2026-09-30",
+      "currency": "GBP",
+      "status": "broken",
+      "contactPerson": "Dr. Arthur Pendelton",
+      "notes": "Promised transfer failed to arrive. No response to phone inquiry.",
+      "createdAt": "2026-09-15"
+    },
+    {
+      "id": "ptp-03",
+      "organizationId": "org-nexura-fr",
+      "debtorId": "deb-5",
+      "debtorName": "Boulangerie Industrielle & Cie SA",
+      "invoiceId": "inv-201",
+      "invoiceNumber": "FACT-2026-0412",
+      "promisedAmount": 31200,
+      "promisedDate": "2026-10-25",
+      "currency": "EUR",
+      "status": "pending",
+      "contactPerson": "Éléonore Dupuis",
+      "notes": "Confirmation reçue par courriel après relance niveau 3.",
+      "createdAt": "2026-10-14"
+    }
+  ],
+  "dunningWorkflows": [
+    {
+      "id": "wf-std-b2b",
+      "organizationId": "org-acme-uk",
+      "name": "Standard B2B Commercial Cadence (Section 12.1)",
+      "description": "Multi-stage collection workflow with pre-due courtesy notice, due-date reminder, progressive escalation, and management review.",
+      "trigger": "due_date_relative",
+      "eligibleRules": {
+        "customerTiers": [
+          "low",
+          "moderate",
+          "high"
+        ],
+        "minBalance": 100,
+        "currencies": [
+          "GBP",
+          "EUR",
+          "USD",
+          "ZAR"
+        ],
+        "paymentTermsDays": [
+          15,
+          30,
+          45,
+          60
+        ],
+        "customerTypes": [
+          "business"
+        ]
+      },
+      "steps": [
+        {
+          "id": "step-1-courtesy",
+          "stageName": "Courtesy Reminder Before Due Date",
+          "stageType": "courtesy_before_due",
+          "dayOffset": -3,
+          "channel": "email",
+          "tone": "friendly_reminder",
+          "templateSubject": "Upcoming Due Date: Invoice {{invoiceNumber}} - {{organizationName}}",
+          "templateBody": "Dear {{contactName}},\n\nThis is a polite courtesy reminder that Invoice {{invoiceNumber}} for {{currency}} {{amountDue}} is due on {{dueDate}}.\n\nFor convenient settlement, you can pay via our secure portal or bank transfer (IBAN: {{bankIban}}).\n\nKind regards,\n{{organizationName}} Accounts Receivable",
+          "requiresManagerApproval": false
+        },
+        {
+          "id": "step-2-duedate",
+          "stageName": "Reminder on Due Date",
+          "stageType": "due_date",
+          "dayOffset": 0,
+          "channel": "email",
+          "tone": "polite_due",
+          "templateSubject": "Due Today: Invoice {{invoiceNumber}} - {{organizationName}}",
+          "templateBody": "Dear {{contactName}},\n\nPlease note that commercial Invoice {{invoiceNumber}} for {{currency}} {{amountDue}} matures for settlement today ({{dueDate}}).\n\nIf remittance has already been initiated, kindly provide your transaction reference via our portal: {{paymentPortalLink}}.\n\nSincerely,\nFinance Operations",
+          "requiresManagerApproval": false
+        },
+        {
+          "id": "step-3-first-overdue",
+          "stageName": "First Overdue Reminder",
+          "stageType": "first_overdue",
+          "dayOffset": 7,
+          "channel": "email",
+          "tone": "firm_overdue",
+          "templateSubject": "OVERDUE: Invoice {{invoiceNumber}} (7 Days Past Due)",
+          "templateBody": "Dear {{contactName}},\n\nOur records indicate that Invoice {{invoiceNumber}} for {{currency}} {{amountDue}} is now 7 days overdue (matured on {{dueDate}}).\n\nPlease arrange remittance at your earliest convenience to maintain account standing. Portal link: {{paymentPortalLink}}.\n\nCredit Control Team",
+          "requiresManagerApproval": false
+        },
+        {
+          "id": "step-4-second-overdue",
+          "stageName": "Second Overdue Reminder",
+          "stageType": "second_overdue",
+          "dayOffset": 14,
+          "channel": "email",
+          "tone": "urgent_escalation",
+          "templateSubject": "URGENT NOTICE: Invoice {{invoiceNumber}} (14 Days Past Due)",
+          "templateBody": "Dear {{contactName}},\n\nInvoice {{invoiceNumber}} for {{currency}} {{amountDue}} remains unpaid despite previous notices.\n\nPlease contact us immediately to confirm payment scheduling or notify us of any queries: {{paymentPortalLink}}.\n\nCredit Operations Department",
+          "requiresManagerApproval": false
+        },
+        {
+          "id": "step-5-formal-followup",
+          "stageName": "Formal Follow-Up",
+          "stageType": "formal_followup",
+          "dayOffset": 30,
+          "channel": "formal_letter",
+          "tone": "formal_demand",
+          "templateSubject": "FORMAL COLLECTION FOLLOW-UP: Overdue Balance {{invoiceNumber}}",
+          "templateBody": "Formal notice is hereby served that Invoice {{invoiceNumber}} for {{currency}} {{amountDue}} is 30 days overdue. Statutory late payment interest has commenced accrual in accordance with agreed commercial terms.\n\nPlease remit full settlement within 7 business days.",
+          "requiresManagerApproval": true
+        },
+        {
+          "id": "step-6-controller-escalation",
+          "stageName": "Escalation to Credit Controller",
+          "stageType": "credit_controller_escalation",
+          "dayOffset": 45,
+          "channel": "email",
+          "tone": "formal_demand",
+          "templateSubject": "CREDIT CONTROLLER ESCALATION: Invoice {{invoiceNumber}} (45 Days Overdue)",
+          "templateBody": "This account has been escalated directly to Senior Credit Controller review. Outstanding balance: {{currency}} {{amountDue}}.\n\nPlease contact our office directly today to resolve this matter.",
+          "requiresManagerApproval": true,
+          "isEscalation": true,
+          "escalationAction": "assign_senior_controller"
+        },
+        {
+          "id": "step-7-management-review",
+          "stageName": "Management Review for Long-Overdue Accounts",
+          "stageType": "management_review",
+          "dayOffset": 60,
+          "channel": "formal_letter",
+          "tone": "formal_demand",
+          "templateSubject": "MANAGEMENT REVIEW NOTICE: Long-Overdue Balance {{invoiceNumber}}",
+          "templateBody": "Invoice {{invoiceNumber}} is 60+ days overdue. The account has been placed into executive management review to determine credit terms suspension and formal dispute mediation.\n\nEthical collections policy: human consultation is required before any further action.",
+          "requiresManagerApproval": true,
+          "isEscalation": true,
+          "escalationAction": "flag_management_review"
+        }
+      ],
+      "applicableTimeZone": "Europe/London",
+      "maxFrequencyDays": 5,
+      "retryPolicy": {
+        "maxAttempts": 3,
+        "retryIntervalHours": 24
+      },
+      "stopConditions": [
+        "payment_received",
+        "dispute_opened",
+        "account_on_hold",
+        "promise_to_pay_active",
+        "customer_excluded"
+      ],
+      "escalationRule": {
+        "triggerAfterDays": 45,
+        "action": "assign_senior_controller",
+        "notifyEmail": "credit.manager@company.co.uk"
+      },
+      "isActive": true,
+      "targetRiskTier": [
+        "low",
+        "moderate",
+        "high"
+      ]
+    },
+    {
+      "id": "wf-highrisk-cadence",
+      "organizationId": "org-acme-uk",
+      "name": "High-Velocity Accelerated Cadence",
+      "description": "Accelerated dunning sequence for high and critical risk debtor accounts.",
+      "trigger": "overdue_threshold",
+      "eligibleRules": {
+        "customerTiers": [
+          "high",
+          "critical"
+        ],
+        "minBalance": 50,
+        "currencies": [
+          "GBP",
+          "EUR",
+          "USD"
+        ],
+        "paymentTermsDays": [
+          7,
+          14,
+          30
+        ],
+        "customerTypes": [
+          "business",
+          "individual"
+        ]
+      },
+      "steps": [
+        {
+          "id": "step-hr-1",
+          "stageName": "Immediate Due Date Alert",
+          "stageType": "due_date",
+          "dayOffset": 0,
+          "channel": "sms",
+          "tone": "polite_due",
+          "templateSubject": "Payment Due Today: {{invoiceNumber}}",
+          "templateBody": "CNTCollect Alert: Invoice {{invoiceNumber}} is due today ({{currency}} {{amountDue}}). Settle now: {{paymentPortalLink}}"
+        },
+        {
+          "id": "step-hr-2",
+          "stageName": "3-Day Urgent Overdue Follow-up",
+          "stageType": "first_overdue",
+          "dayOffset": 3,
+          "channel": "email",
+          "tone": "firm_overdue",
+          "templateSubject": "Action Required: Invoice {{invoiceNumber}} is 3 days overdue",
+          "templateBody": "Dear {{contactName}}, Invoice {{invoiceNumber}} is now 3 days overdue. Please remit {{currency}} {{amountDue}} immediately."
+        },
+        {
+          "id": "step-hr-3",
+          "stageName": "7-Day High Risk Escalation",
+          "stageType": "second_overdue",
+          "dayOffset": 7,
+          "channel": "whatsapp",
+          "tone": "urgent_escalation",
+          "templateSubject": "Urgent Payment Notification",
+          "templateBody": "Hello {{contactName}}, Invoice {{invoiceNumber}} for {{currency}} {{amountDue}} requires immediate settlement. Portal: {{paymentPortalLink}}",
+          "requiresManagerApproval": true,
+          "isEscalation": true,
+          "escalationAction": "assign_senior_controller"
+        }
+      ],
+      "applicableTimeZone": "Europe/London",
+      "maxFrequencyDays": 3,
+      "retryPolicy": {
+        "maxAttempts": 2,
+        "retryIntervalHours": 12
+      },
+      "stopConditions": [
+        "payment_received",
+        "dispute_opened",
+        "account_on_hold",
+        "customer_excluded"
+      ],
+      "escalationRule": {
+        "triggerAfterDays": 7,
+        "action": "flag_management_review"
+      },
+      "isActive": true,
+      "targetRiskTier": [
+        "high",
+        "critical"
+      ]
+    }
+  ],
+  "communications": [
+    {
+      "id": "comm-101",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-1",
+      "debtorName": "Apex Retail Group plc",
+      "invoiceId": "inv-101",
+      "invoiceNumber": "INV-2026-0891",
+      "channel": "email",
+      "tone": "formal_demand",
+      "language": "en",
+      "recipient": "accounts.payable@apexretailgroup.co.uk",
+      "subject": "FORMAL DEMAND FOR PAYMENT: Invoice INV-2026-0891 - Acme Logistics",
+      "body": "Dear Marcus Vance, We write regarding outstanding invoice INV-2026-0891 in the amount of £22,200.00. As previously noted, this balance is now 64 days overdue. Statutory late payment interest of £331.42 has accrued. Please remit payment via bank transfer.",
+      "sentAt": "2026-10-10 14:22:10",
+      "status": "delivered",
+      "isAIGenerated": true
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "aud-test-run-1792666566283",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-22 10:56:06 UTC",
+      "userId": "usr-admin",
+      "userName": "QA Automation Lead",
+      "action": "Comprehensive Test Suite Executed (Part 31 Quality Assurance)",
+      "category": "system",
+      "details": "Executed all 6 test suites (29 tests, 102 assertions). Pass rate: 100%. All modules verified complete.",
+      "targetId": "run-1792666566283",
+      "targetType": "TestSuiteRun"
+    },
+    {
+      "id": "aud-test-run-1792666556488",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-22 10:55:56 UTC",
+      "userId": "usr-admin",
+      "userName": "QA Automation Lead",
+      "action": "Comprehensive Test Suite Executed (Part 31 Quality Assurance)",
+      "category": "system",
+      "details": "Executed all 6 test suites (29 tests, 102 assertions). Pass rate: 100%. All modules verified complete.",
+      "targetId": "run-1792666556488",
+      "targetType": "TestSuiteRun"
+    },
+    {
+      "id": "aud-test-run-1792657400769",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-22 08:23:20 UTC",
+      "userId": "usr-admin",
+      "userName": "QA Automation Lead",
+      "action": "Comprehensive Test Suite Executed (Part 31 Quality Assurance)",
+      "category": "system",
+      "details": "Executed all 6 test suites (29 tests, 102 assertions). Pass rate: 100%. All modules verified complete.",
+      "targetId": "run-1792657400769",
+      "targetType": "TestSuiteRun"
+    },
+    {
+      "id": "aud-retry-1792574790482",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-21 09:26:30 UTC",
+      "userId": "usr-admin",
+      "userName": "Credit Control Officer",
+      "action": "Safe Retry Executed (ERR_REMINDER_DELIVERY_BOUNCED) (Section 32)",
+      "category": "system",
+      "details": "Safely retried failed incident inc-rem-001 (Category: reminder). Attempt #2. Fresh idempotency token issued.",
+      "targetId": "inc-rem-001",
+      "targetType": "ObservabilityIncident"
+    },
+    {
+      "id": "aud-err-1792574785238",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-21 09:26:25 UTC",
+      "userId": "usr-admin",
+      "userName": "SRE Observability Agent",
+      "action": "Incident Logged (ERR_PAYMENT_GATEWAY_DECLINE) (Section 32)",
+      "category": "system",
+      "details": "Sanitized diagnostic log created for category \"payment\". Zero sensitive tokens leaked to user view.",
+      "targetId": "inc-sim-1792574785236",
+      "targetType": "ObservabilityIncident"
+    },
+    {
+      "id": "aud-err-1792574779225",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-21 09:26:19 UTC",
+      "userId": "usr-admin",
+      "userName": "SRE Observability Agent",
+      "action": "Incident Logged (ERR_PAYMENT_GATEWAY_DECLINE) (Section 32)",
+      "category": "system",
+      "details": "Sanitized diagnostic log created for category \"payment\". Zero sensitive tokens leaked to user view.",
+      "targetId": "inc-sim-1792574779222",
+      "targetType": "ObservabilityIncident"
+    },
+    {
+      "id": "aud-test-run-1792574171458",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-21 09:16:11 UTC",
+      "userId": "usr-admin",
+      "userName": "QA Automation Lead",
+      "action": "Comprehensive Test Suite Executed (Part 31 Quality Assurance)",
+      "category": "system",
+      "details": "Executed all 6 test suites (29 tests, 102 assertions). Pass rate: 100%. All modules verified complete.",
+      "targetId": "run-1792574171458",
+      "targetType": "TestSuiteRun"
+    },
+    {
+      "id": "aud-1792334456863",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-18 14:40:56",
+      "userId": "usr-importer",
+      "userName": "Test Runner",
+      "action": "Spreadsheet Import Processed (INVOICES)",
+      "category": "system",
+      "details": "Imported 1 invoices records from \"Test_Import.csv\" (Batch BATCH-TEST-01). 0 duplicates skipped, 0 rows rejected.",
+      "targetId": "imp-1792334456863",
+      "targetType": "ImportBatch"
+    },
+    {
+      "id": "aud-rev-1792334444077",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-18 14:40:44",
+      "userId": "usr-ar-controller",
+      "userName": "David Chen (Finance Manager)",
+      "action": "Payment Reversal Executed (Section 10.5)",
+      "category": "payment",
+      "details": "Executed accounting reversal of payment SEPA-TRX-9981204 (GBP 8000). 1 invoices restored. Reason: \"Direct debit indemnity clawback notice from bank\".",
+      "targetId": "pay-001",
+      "targetType": "Payment"
+    },
+    {
+      "id": "aud-1792333395509",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-18 14:23:15",
+      "userId": "usr-current",
+      "userName": "Sarah Miller",
+      "action": "Invoice Metadata Updated (Section 8.4)",
+      "category": "invoice",
+      "details": "Updated metadata on invoice INV-2026-0891: PO Ref changed from \"PO-APX-8821\" to \"PO-APX-8821-REV1\"; External Accounting Ref changed from \"EXT-2026-0891\" to \"XERO-INV-99881\".",
+      "targetId": "inv-101",
+      "targetType": "Invoice"
+    },
+    {
+      "id": "aud-1792333388922-tsc4",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-18 14:23:08",
+      "userId": "usr-current",
+      "userName": "Credit Controller",
+      "action": "Bulk Reassignment of Credit Controller (Section 8.3)",
+      "category": "invoice",
+      "details": "Reassigned invoice INV-2026-0891 to Sarah Miller",
+      "targetId": "inv-101",
+      "targetType": "Invoice"
+    },
+    {
+      "id": "aud-1792246966507",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-17 14:22:46",
+      "userId": "usr-automation",
+      "userName": "CNTCollect Dunning Daemon",
+      "action": "Dunning Automated Cadence Executed",
+      "category": "dunning",
+      "details": "Processed 3 overdue accounts. 3 invoices escalated, 0 paused due to active disputes."
+    },
+    {
+      "id": "aud-1",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-17 06:14:00",
+      "userId": "usr-1",
+      "userName": "Credit Control Lead",
+      "action": "Dunning Sequence Triggered",
+      "category": "dunning",
+      "details": "Evaluated 4 open invoices against Standard Commercial Credit Escalation workflow."
+    },
+    {
+      "id": "aud-2",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-15 11:30:22",
+      "userId": "usr-1",
+      "userName": "Credit Control Lead",
+      "action": "Promise to Pay Logged",
+      "category": "promise",
+      "details": "PTP logged for Apex Retail Group for £11,900 due on 2026-10-24.",
+      "targetId": "ptp-01",
+      "targetType": "PromiseToPay"
+    },
+    {
+      "id": "aud-3",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-12 09:45:10",
+      "userId": "usr-system",
+      "userName": "System Automation Engine",
+      "action": "Interest Accrual Updated",
+      "category": "invoice",
+      "details": "Recalculated statutory interest for 3 overdue accounts at 8.5% annual rate."
+    }
+  ],
+  "integrations": [
+    {
+      "service": "stripe",
+      "name": "Stripe Payments",
+      "category": "payments",
+      "isConfigured": true,
+      "status": "ready",
+      "description": "Accept credit card, SEPA direct debit, and local payment rails on self-service debtor portal.",
+      "apiKeyMasked": "pk_live_51M***902b",
+      "lastSyncAt": "2026-10-17 05:00:00"
+    },
+    {
+      "service": "twilio",
+      "name": "Twilio SMS & Voice",
+      "category": "sms",
+      "isConfigured": true,
+      "status": "ready",
+      "description": "Direct SMS reminders, payment link dispatch, and automated voice dunning notifications.",
+      "apiKeyMasked": "AC349***001a",
+      "lastSyncAt": "2026-10-16 18:22:00"
+    },
+    {
+      "service": "sendgrid",
+      "name": "SendGrid Email Delivery",
+      "category": "email",
+      "isConfigured": true,
+      "status": "ready",
+      "description": "Enterprise transactional email delivery with real-time open and bounce tracking.",
+      "apiKeyMasked": "SG.982***014x",
+      "lastSyncAt": "2026-10-17 07:00:00"
+    },
+    {
+      "service": "xero",
+      "name": "Xero Accounting",
+      "category": "accounting_erp",
+      "isConfigured": false,
+      "status": "needs_credentials",
+      "description": "Two-way synchronization of invoices, credit notes, payments, and debtor contact data."
+    },
+    {
+      "service": "quickbooks",
+      "name": "QuickBooks Online",
+      "category": "accounting_erp",
+      "isConfigured": false,
+      "status": "needs_credentials",
+      "description": "Automated sync of accounts receivable ledger and reconciliation feeds."
+    }
+  ],
+  "creditNotes": [
+    {
+      "id": "cn-001",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-3",
+      "debtorName": "Nordic Supply Chain AB",
+      "creditNoteNumber": "CN-2026-001",
+      "issueDate": "2026-09-18",
+      "currency": "GBP",
+      "amount": 3500,
+      "remainingBalance": 0,
+      "reason": "goodwill_settlement",
+      "allocations": [
+        {
+          "invoiceId": "inv-105",
+          "invoiceNumber": "INV-2026-0810",
+          "allocatedAmount": 3500
+        }
+      ],
+      "status": "allocated",
+      "issuedBy": "David Chen (Finance Manager)",
+      "notes": "Goodwill concession agreed during dispute mediation for shipment #4412 demurrage."
+    }
+  ],
+  "users": [
+    {
+      "id": "usr-platform-admin",
+      "organizationId": "all",
+      "name": "Helena Vance",
+      "email": "helena.vance@cntcollect.com",
+      "role": "platform_admin",
+      "isActive": true,
+      "emailVerified": true,
+      "lastLoginAt": "2026-10-18 06:10:00",
+      "mfaEnabled": true,
+      "recoveryCodesRemaining": 8,
+      "passwordSalt": "e8b7c3d2a1f09876543210fedcba9876",
+      "passwordHash": "8b7d983c2e1f4095a892b1a039d91f284c1b9a8972e391a271b058a98317dca8"
+    },
+    {
+      "id": "usr-owner-1",
+      "organizationId": "org-acme-uk",
+      "name": "Marcus Sterling",
+      "email": "marcus.sterling@acmelogistics.co.uk",
+      "role": "owner",
+      "isActive": true,
+      "emailVerified": true,
+      "lastLoginAt": "2026-10-18 05:45:00",
+      "mfaEnabled": true,
+      "recoveryCodesRemaining": 6,
+      "passwordSalt": "e8b7c3d2a1f09876543210fedcba9876",
+      "passwordHash": "8b7d983c2e1f4095a892b1a039d91f284c1b9a8972e391a271b058a98317dca8"
+    },
+    {
+      "id": "usr-1",
+      "organizationId": "org-acme-uk",
+      "name": "Alice Morgan",
+      "email": "alice.morgan@acmelogistics.co.uk",
+      "role": "admin",
+      "isActive": true,
+      "emailVerified": true,
+      "lastLoginAt": "2026-10-17 07:15:00",
+      "mfaEnabled": true,
+      "recoveryCodesRemaining": 8,
+      "passwordSalt": "e8b7c3d2a1f09876543210fedcba9876",
+      "passwordHash": "8b7d983c2e1f4095a892b1a039d91f284c1b9a8972e391a271b058a98317dca8"
+    },
+    {
+      "id": "usr-2",
+      "organizationId": "org-acme-uk",
+      "name": "David Chen",
+      "email": "david.chen@acmelogistics.co.uk",
+      "role": "finance_manager",
+      "isActive": true,
+      "emailVerified": true,
+      "lastLoginAt": "2026-10-16 16:40:00",
+      "mfaEnabled": true,
+      "recoveryCodesRemaining": 8,
+      "passwordSalt": "e8b7c3d2a1f09876543210fedcba9876",
+      "passwordHash": "8b7d983c2e1f4095a892b1a039d91f284c1b9a8972e391a271b058a98317dca8"
+    },
+    {
+      "id": "usr-3",
+      "organizationId": "org-acme-uk",
+      "name": "Sarah Miller",
+      "email": "sarah.miller@acmelogistics.co.uk",
+      "role": "credit_controller",
+      "isActive": true,
+      "emailVerified": true,
+      "lastLoginAt": "2026-10-17 06:50:00",
+      "mfaEnabled": false,
+      "recoveryCodesRemaining": 8,
+      "passwordSalt": "e8b7c3d2a1f09876543210fedcba9876",
+      "passwordHash": "8b7d983c2e1f4095a892b1a039d91f284c1b9a8972e391a271b058a98317dca8"
+    },
+    {
+      "id": "usr-4",
+      "organizationId": "org-acme-uk",
+      "name": "James Wilson",
+      "email": "james.wilson@acmelogistics.co.uk",
+      "role": "collector",
+      "isActive": true,
+      "emailVerified": true,
+      "lastLoginAt": "2026-10-15 11:20:00",
+      "mfaEnabled": false,
+      "recoveryCodesRemaining": 8,
+      "passwordSalt": "e8b7c3d2a1f09876543210fedcba9876",
+      "passwordHash": "8b7d983c2e1f4095a892b1a039d91f284c1b9a8972e391a271b058a98317dca8"
+    },
+    {
+      "id": "usr-5",
+      "organizationId": "org-acme-uk",
+      "name": "Emma Watson",
+      "email": "emma.watson@acmelogistics.co.uk",
+      "role": "viewer",
+      "isActive": true,
+      "emailVerified": true,
+      "lastLoginAt": "2026-10-14 09:10:00",
+      "mfaEnabled": false,
+      "recoveryCodesRemaining": 8,
+      "passwordSalt": "e8b7c3d2a1f09876543210fedcba9876",
+      "passwordHash": "8b7d983c2e1f4095a892b1a039d91f284c1b9a8972e391a271b058a98317dca8"
+    },
+    {
+      "id": "usr-auditor-1",
+      "organizationId": "org-acme-uk",
+      "name": "Arthur Kingsley",
+      "email": "arthur.kingsley@uk-audit-compliance.org",
+      "role": "auditor",
+      "isActive": true,
+      "emailVerified": true,
+      "lastLoginAt": "2026-10-17 14:30:00",
+      "mfaEnabled": true,
+      "recoveryCodesRemaining": 8,
+      "passwordSalt": "e8b7c3d2a1f09876543210fedcba9876",
+      "passwordHash": "8b7d983c2e1f4095a892b1a039d91f284c1b9a8972e391a271b058a98317dca8"
+    },
+    {
+      "id": "usr-portal-1",
+      "organizationId": "org-acme-uk",
+      "name": "Marcus Vance",
+      "email": "accounts.payable@apexretailgroup.co.uk",
+      "role": "customer_portal",
+      "debtorId": "deb-1",
+      "isActive": true,
+      "emailVerified": true,
+      "lastLoginAt": "2026-10-17 16:15:00",
+      "mfaEnabled": false,
+      "recoveryCodesRemaining": 8,
+      "passwordSalt": "e8b7c3d2a1f09876543210fedcba9876",
+      "passwordHash": "8b7d983c2e1f4095a892b1a039d91f284c1b9a8972e391a271b058a98317dca8"
+    }
+  ],
+  "backgroundJobs": [
+    {
+      "id": "job-dunning",
+      "name": "Automated Dunning Cadence Evaluator",
+      "schedule": "Daily at 08:00 UTC (Cloud Scheduler)",
+      "type": "dunning_cadence",
+      "status": "idle",
+      "lastRunAt": "2026-10-17 08:00:00",
+      "nextRunAt": "2026-10-18 08:00:00",
+      "itemsProcessed": 4
+    },
+    {
+      "id": "job-interest",
+      "name": "Statutory Late Payment Interest Accrual",
+      "schedule": "Daily at 00:01 UTC",
+      "type": "late_interest_accrual",
+      "status": "completed",
+      "lastRunAt": "2026-10-17 00:01:00",
+      "nextRunAt": "2026-10-18 00:01:00",
+      "itemsProcessed": 6
+    },
+    {
+      "id": "job-ptp",
+      "name": "Promise to Pay (PTP) Adherence Daemon",
+      "schedule": "Every 2 hours",
+      "type": "ptp_check",
+      "status": "idle",
+      "lastRunAt": "2026-10-17 06:00:00",
+      "nextRunAt": "2026-10-17 08:00:00",
+      "itemsProcessed": 3
+    },
+    {
+      "id": "job-sync",
+      "name": "ERP / Accounting Ledger Sync Daemon",
+      "schedule": "Every 30 minutes",
+      "type": "erp_sync",
+      "status": "idle",
+      "lastRunAt": "2026-10-17 07:00:00",
+      "nextRunAt": "2026-10-17 07:30:00",
+      "itemsProcessed": 12
+    }
+  ],
+  "highImpactApprovals": [
+    {
+      "id": "hia-001",
+      "organizationId": "org-acme-uk",
+      "actionType": "write_off",
+      "title": "Invoice Write-Off: Legacy Small Balance",
+      "description": "Proposed write-off of uncollectible historic balance for cancelled sample batch INV-2025-0104.",
+      "amount": 850,
+      "currency": "GBP",
+      "targetId": "inv-101",
+      "targetType": "Invoice",
+      "requestedBy": "Sarah Miller (Credit Controller)",
+      "requestedAt": "2026-10-16 11:20:00",
+      "status": "pending",
+      "reason": "Client liquidated branch; recovery costs exceed face value."
+    },
+    {
+      "id": "hia-002",
+      "organizationId": "org-acme-uk",
+      "actionType": "material_adjustment",
+      "title": "Material Credit Note Adjustment",
+      "description": "Commercial settlement concession on shipment demurrage dispute.",
+      "amount": 3500,
+      "currency": "GBP",
+      "targetId": "cn-001",
+      "targetType": "CreditNote",
+      "requestedBy": "Oliver Stone (Credit Operations)",
+      "requestedAt": "2026-09-18 10:00:00",
+      "status": "approved",
+      "approvedBy": "David Chen (Finance Manager)",
+      "approvedAt": "2026-09-18 10:45:00",
+      "reason": "Authorized concession following telematics review with Nordic Supply Chain."
+    },
+    {
+      "id": "hia-003",
+      "organizationId": "org-acme-uk",
+      "actionType": "payment_details_change",
+      "title": "Remittance Bank Account Modification",
+      "description": "Update European Clearing IBAN from Barclays to HSBC Commercial.",
+      "targetId": "org-acme-uk",
+      "targetType": "Organization",
+      "requestedBy": "Alice Morgan (Organisation Administrator)",
+      "requestedAt": "2026-10-17 08:30:00",
+      "status": "pending",
+      "reason": "Annual corporate treasury banking switchover."
+    }
+  ],
+  "sessions": [
+    {
+      "id": "sess-001",
+      "userId": "usr-1",
+      "device": "MacBook Pro 16\"",
+      "browser": "Google Chrome 130.0",
+      "ipAddress": "194.74.218.42",
+      "location": "London, United Kingdom",
+      "createdAt": "2026-10-18 06:15:00",
+      "lastActiveAt": "2026-10-18 07:45:00",
+      "isCurrent": true
+    },
+    {
+      "id": "sess-002",
+      "userId": "usr-1",
+      "device": "iPhone 15 Pro",
+      "browser": "Mobile Safari 18.0",
+      "ipAddress": "82.132.247.91",
+      "location": "London, United Kingdom",
+      "createdAt": "2026-10-17 18:20:00",
+      "lastActiveAt": "2026-10-17 21:05:00",
+      "isCurrent": false
+    },
+    {
+      "id": "sess-003",
+      "userId": "usr-owner-1",
+      "device": "Dell XPS 15",
+      "browser": "Mozilla Firefox 131.0",
+      "ipAddress": "185.120.48.12",
+      "location": "Reading, United Kingdom",
+      "createdAt": "2026-10-18 05:40:00",
+      "lastActiveAt": "2026-10-18 07:10:00",
+      "isCurrent": false
+    }
+  ],
+  "collectionActivities": [
+    {
+      "id": "act-001",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-1",
+      "debtorName": "Apex Retail Holdings PLC",
+      "activityType": "phone_call",
+      "title": "Credit Term Review & Remittance Call",
+      "description": "Spoke directly with Marcus Vance (Finance Director). Confirmed settlement remittance for invoice INV-2026-0901.",
+      "performedBy": "Sarah Miller (Credit Controller)",
+      "performedAt": "2026-10-15 14:30:00",
+      "outcome": "promise_secured",
+      "followUpDate": "2026-10-24",
+      "followUpAssignee": "Sarah Miller"
+    },
+    {
+      "id": "act-002",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-2",
+      "debtorName": "Vanguard Tech Solutions Ltd",
+      "activityType": "settlement_negotiation",
+      "title": "Disputed Overdue Balance Restructuring Call",
+      "description": "Discussed partial settlement schedule of £5,000 weekly installments against overdue software consulting charges.",
+      "performedBy": "James Wilson (Collections Officer)",
+      "performedAt": "2026-10-14 11:15:00",
+      "outcome": "agreed_payment_plan",
+      "followUpDate": "2026-10-20",
+      "followUpAssignee": "James Wilson"
+    },
+    {
+      "id": "act-003",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-3",
+      "debtorName": "Nordic Supply Chain AB",
+      "activityType": "in_person_meeting",
+      "title": "Bilateral Cold-Chain Demurrage Dispute Hearing",
+      "description": "Executive mediation conference with Johan Lindqvist regarding transit temperature deviation. Issued formal goodwill credit note of £3,500.",
+      "performedBy": "David Chen (Finance Manager)",
+      "performedAt": "2026-09-18 10:00:00",
+      "outcome": "dispute_raised",
+      "followUpDate": "2026-10-25",
+      "followUpAssignee": "David Chen"
+    },
+    {
+      "id": "act-004",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-4",
+      "debtorName": "Horizon Medical Equipment Ltd",
+      "activityType": "formal_letter",
+      "title": "Statutory 7-Day Pre-Action Protocol Letter of Claim",
+      "description": "Dispatched formal legal demand with statutory 8.5% late interest and compensation fees via recorded courier delivery.",
+      "performedBy": "Alice Morgan (Organisation Administrator)",
+      "performedAt": "2026-10-12 16:45:00",
+      "outcome": "escalated_to_legal",
+      "followUpDate": "2026-10-19",
+      "followUpAssignee": "Alice Morgan"
+    }
+  ],
+  "importBatches": [
+    {
+      "id": "imp-1792334456863",
+      "organizationId": "org-acme-uk",
+      "batchNumber": "BATCH-TEST-01",
+      "filename": "Test_Import.csv",
+      "fileFormat": "csv",
+      "fileSizeFormatted": "12 KB",
+      "entityType": "invoices",
+      "totalRows": 1,
+      "importedRows": 1,
+      "rejectedRows": 0,
+      "duplicateRows": 0,
+      "idempotencyKey": "test-idem-999",
+      "status": "completed",
+      "createdAt": "2026-10-18 14:40:56",
+      "createdBy": "Test Runner",
+      "sourceReference": "Test CSV",
+      "rejectedRowsData": []
+    },
+    {
+      "id": "imp-001",
+      "organizationId": "org-acme-uk",
+      "batchNumber": "BATCH-2026-1001",
+      "filename": "Oct_Q3_Invoices_Master.xlsx",
+      "fileFormat": "xlsx",
+      "fileSizeFormatted": "348 KB",
+      "entityType": "invoices",
+      "totalRows": 42,
+      "importedRows": 40,
+      "rejectedRows": 2,
+      "duplicateRows": 0,
+      "idempotencyKey": "idem-oct-q3-001",
+      "status": "partial",
+      "createdAt": "2026-10-12 11:20:00",
+      "createdBy": "Alice Morgan",
+      "sourceReference": "SAP S/4HANA Ledger Export",
+      "rejectedRowsData": [
+        {
+          "rowIndex": 14,
+          "data": {
+            "invoiceNumber": "INV-SAP-901",
+            "debtorName": "Apex Retail",
+            "originalAmount": "INVALID_NUM"
+          },
+          "reasons": [
+            "Numeric format validation failed: originalAmount must be a positive number"
+          ]
+        },
+        {
+          "rowIndex": 29,
+          "data": {
+            "invoiceNumber": "",
+            "debtorName": "Vanguard Tech",
+            "originalAmount": "4500"
+          },
+          "reasons": [
+            "Required field missing: invoiceNumber cannot be empty"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "imp-002",
+      "organizationId": "org-acme-uk",
+      "batchNumber": "BATCH-2026-0928",
+      "filename": "Enterprise_Customer_Directory.csv",
+      "fileFormat": "csv",
+      "fileSizeFormatted": "112 KB",
+      "entityType": "customers",
+      "totalRows": 18,
+      "importedRows": 18,
+      "rejectedRows": 0,
+      "duplicateRows": 0,
+      "idempotencyKey": "idem-cust-crm-002",
+      "status": "completed",
+      "createdAt": "2026-09-28 14:05:00",
+      "createdBy": "David Chen",
+      "sourceReference": "Salesforce CRM Production Export",
+      "rejectedRowsData": []
+    },
+    {
+      "id": "imp-003",
+      "organizationId": "org-acme-uk",
+      "batchNumber": "BATCH-2026-0915",
+      "filename": "BACS_Historical_Settlements.csv",
+      "fileFormat": "csv",
+      "fileSizeFormatted": "94 KB",
+      "entityType": "payments",
+      "totalRows": 65,
+      "importedRows": 63,
+      "rejectedRows": 2,
+      "duplicateRows": 1,
+      "idempotencyKey": "idem-bacs-003",
+      "status": "partial",
+      "createdAt": "2026-09-15 09:30:00",
+      "createdBy": "Sarah Miller",
+      "sourceReference": "Barclays Corporate Settlement Feed",
+      "rejectedRowsData": [
+        {
+          "rowIndex": 41,
+          "data": {
+            "referenceNumber": "BACS-TX-8842",
+            "amount": "-450"
+          },
+          "reasons": [
+            "Negative amount without explicit reversal classification"
+          ]
+        }
+      ]
+    }
+  ],
+  "mappingTemplates": [
+    {
+      "id": "tmpl-inv-generic",
+      "name": "Standard Invoices Spreadsheet (Default)",
+      "entityType": "invoices",
+      "mappings": {
+        "Invoice Number": "invoiceNumber",
+        "Customer Name": "debtorName",
+        "Customer Code": "customerCode",
+        "Issue Date": "issueDate",
+        "Due Date": "dueDate",
+        "Invoice Amount": "originalAmount",
+        "Currency": "currency",
+        "Amount Paid": "amountPaid",
+        "Purchase Order": "purchaseOrderRef",
+        "Payment Terms": "paymentTermsDays",
+        "Description": "description",
+        "External Ref": "externalAccountingRef"
+      },
+      "createdAt": "2026-09-01 10:00:00",
+      "lastUsedAt": "2026-10-12 11:18:00"
+    },
+    {
+      "id": "tmpl-inv-xero",
+      "name": "Xero / QuickBooks AR Export Template",
+      "entityType": "invoices",
+      "mappings": {
+        "*InvoiceNumber": "invoiceNumber",
+        "*ContactName": "debtorName",
+        "*InvoiceDate": "issueDate",
+        "*DueDate": "dueDate",
+        "Total": "originalAmount",
+        "Currency": "currency",
+        "AmountPaid": "amountPaid",
+        "Reference": "purchaseOrderRef",
+        "Description": "description"
+      },
+      "createdAt": "2026-09-10 12:00:00",
+      "lastUsedAt": "2026-10-05 16:30:00"
+    },
+    {
+      "id": "tmpl-cust-master",
+      "name": "Customer & Debtor Master Template",
+      "entityType": "customers",
+      "mappings": {
+        "Customer Name": "name",
+        "Customer Code": "customerReference",
+        "Customer Type": "customerType",
+        "Company Registration": "registrationNumber",
+        "Tax Identification": "taxId",
+        "Billing Street": "billingAddress.street",
+        "Billing City": "billingAddress.city",
+        "Billing Postal Code": "billingAddress.postalCode",
+        "Country": "country",
+        "Primary Contact": "contactName",
+        "Email": "email",
+        "Telephone": "telephone",
+        "Credit Limit": "creditLimit",
+        "Payment Terms Days": "paymentTermsDays",
+        "Default Currency": "defaultCurrency"
+      },
+      "createdAt": "2026-09-15 09:00:00",
+      "lastUsedAt": "2026-09-28 14:02:00"
+    },
+    {
+      "id": "tmpl-pay-bank",
+      "name": "Bank Remittance Settlement Template",
+      "entityType": "payments",
+      "mappings": {
+        "Payment Reference": "referenceNumber",
+        "Debtor Name": "debtorName",
+        "Settlement Amount": "amount",
+        "Currency": "currency",
+        "Settlement Date": "paymentDate",
+        "Payment Channel": "paymentMethod",
+        "Target Invoice": "invoiceNumber"
+      },
+      "createdAt": "2026-09-20 15:00:00",
+      "lastUsedAt": "2026-09-15 09:25:00"
+    }
+  ],
+  "financialAdjustments": [
+    {
+      "id": "adj-001",
+      "organizationId": "org-acme-uk",
+      "invoiceId": "inv-1",
+      "invoiceNumber": "INV-2026-0901",
+      "debtorId": "deb-1",
+      "debtorName": "Apex Retail Holdings PLC",
+      "type": "commercial_discount",
+      "amount": 350,
+      "amountMinorUnits": 35000,
+      "currency": "GBP",
+      "effectiveDate": "2026-10-10",
+      "reason": "Authorized prompt-settlement commercial discount approved by credit controller",
+      "authorizedBy": "Sarah Miller (Credit Controller)",
+      "auditTrailId": "aud-adj-001",
+      "createdAt": "2026-10-10 14:00:00"
+    }
+  ],
+  "paymentReversals": [
+    {
+      "id": "rev-1792334444077",
+      "organizationId": "org-acme-uk",
+      "originalPaymentId": "pay-001",
+      "originalPaymentRef": "SEPA-TRX-9981204",
+      "debtorId": "deb-3",
+      "debtorName": "Nordic Supply Chain AB",
+      "amount": 8000,
+      "currency": "GBP",
+      "reversalDate": "2026-10-18",
+      "reason": "Direct debit indemnity clawback notice from bank",
+      "authorizedBy": "David Chen (Finance Manager)",
+      "affectedInvoices": [
+        {
+          "invoiceId": "inv-105",
+          "invoiceNumber": "INV-2026-0810",
+          "restoredAmount": 8000
+        }
+      ],
+      "auditTrailId": "aud-rev-1792334444077",
+      "createdAt": "2026-10-18 14:40:44"
+    },
+    {
+      "id": "rev-001",
+      "organizationId": "org-acme-uk",
+      "originalPaymentId": "pay-sample-01",
+      "originalPaymentRef": "BACS-TEST-8812",
+      "debtorId": "deb-2",
+      "debtorName": "Vanguard Tech Solutions Ltd",
+      "amount": 1200,
+      "currency": "GBP",
+      "reversalDate": "2026-10-05",
+      "reason": "Direct debit bank dishonour notice received following clearing window dispute",
+      "authorizedBy": "David Chen (Finance Manager)",
+      "affectedInvoices": [
+        {
+          "invoiceId": "inv-3",
+          "invoiceNumber": "INV-2026-0819",
+          "restoredAmount": 1200
+        }
+      ],
+      "auditTrailId": "aud-rev-001",
+      "createdAt": "2026-10-05 16:30:00"
+    }
+  ],
+  "customAgeingConfigs": [
+    {
+      "id": "cfg-default",
+      "organizationId": "org-acme-uk",
+      "name": "Standard Statutory Ageing (Default)",
+      "buckets": [
+        {
+          "id": "not_due",
+          "label": "Not Yet Due",
+          "minDays": -99999,
+          "maxDays": 0
+        },
+        {
+          "id": "days_1_30",
+          "label": "1–30 Days Overdue",
+          "minDays": 1,
+          "maxDays": 30
+        },
+        {
+          "id": "days_31_60",
+          "label": "31–60 Days Overdue",
+          "minDays": 31,
+          "maxDays": 60
+        },
+        {
+          "id": "days_61_90",
+          "label": "61–90 Days Overdue",
+          "minDays": 61,
+          "maxDays": 90
+        },
+        {
+          "id": "days_90_plus",
+          "label": "More Than 90 Days Overdue",
+          "minDays": 91,
+          "maxDays": 99999
+        }
+      ],
+      "isDefault": true,
+      "updatedAt": "2026-09-01 00:00:00"
+    },
+    {
+      "id": "cfg-aggressive",
+      "organizationId": "org-acme-uk",
+      "name": "High-Velocity 15-Day Cadence Ageing",
+      "buckets": [
+        {
+          "id": "not_due",
+          "label": "Current / Not Due",
+          "minDays": -99999,
+          "maxDays": 0
+        },
+        {
+          "id": "days_1_15",
+          "label": "1–15 Days Overdue",
+          "minDays": 1,
+          "maxDays": 15
+        },
+        {
+          "id": "days_16_30",
+          "label": "16–30 Days Overdue",
+          "minDays": 16,
+          "maxDays": 30
+        },
+        {
+          "id": "days_31_45",
+          "label": "31–45 Days Overdue",
+          "minDays": 31,
+          "maxDays": 45
+        },
+        {
+          "id": "days_46_60",
+          "label": "46–60 Days Overdue",
+          "minDays": 46,
+          "maxDays": 60
+        },
+        {
+          "id": "days_60_plus",
+          "label": "More Than 60 Days Overdue",
+          "minDays": 61,
+          "maxDays": 99999
+        }
+      ],
+      "isDefault": false,
+      "updatedAt": "2026-10-01 10:00:00"
+    }
+  ],
+  "exchangeRates": [
+    {
+      "fromCurrency": "EUR",
+      "toCurrency": "GBP",
+      "rate": 0.854,
+      "rateDate": "2026-10-18",
+      "conversionSource": "Bank of England Benchmark"
+    },
+    {
+      "fromCurrency": "USD",
+      "toCurrency": "GBP",
+      "rate": 0.772,
+      "rateDate": "2026-10-18",
+      "conversionSource": "Bank of England Benchmark"
+    },
+    {
+      "fromCurrency": "ZAR",
+      "toCurrency": "GBP",
+      "rate": 0.043,
+      "rateDate": "2026-10-18",
+      "conversionSource": "SARB Official Reference"
+    },
+    {
+      "fromCurrency": "GBP",
+      "toCurrency": "GBP",
+      "rate": 1,
+      "rateDate": "2026-10-18",
+      "conversionSource": "Parity"
+    },
+    {
+      "fromCurrency": "EUR",
+      "toCurrency": "USD",
+      "rate": 1.106,
+      "rateDate": "2026-10-18",
+      "conversionSource": "ECB Daily Reference"
+    },
+    {
+      "fromCurrency": "GBP",
+      "toCurrency": "USD",
+      "rate": 1.295,
+      "rateDate": "2026-10-18",
+      "conversionSource": "Federal Reserve H.10"
+    },
+    {
+      "fromCurrency": "USD",
+      "toCurrency": "EUR",
+      "rate": 0.904,
+      "rateDate": "2026-10-18",
+      "conversionSource": "ECB Daily Reference"
+    },
+    {
+      "fromCurrency": "GBP",
+      "toCurrency": "EUR",
+      "rate": 1.171,
+      "rateDate": "2026-10-18",
+      "conversionSource": "ECB Daily Reference"
+    }
+  ],
+  "paymentVerificationTasks": [
+    {
+      "id": "task-pop-001",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-1",
+      "debtorName": "Apex Retail Holdings PLC",
+      "invoiceId": "inv-1",
+      "invoiceNumber": "INV-2026-0901",
+      "amount": 14250,
+      "currency": "GBP",
+      "paymentDate": "2026-10-16",
+      "paymentMethod": "bank_transfer",
+      "transactionReference": "BARC-UK-992140",
+      "bankReference": "BARCLAYS-WIRE-APEX-0901",
+      "documentName": "Remittance_Advice_Apex_INV20260901.pdf",
+      "documentSize": "420 KB",
+      "documentUrl": "#",
+      "submittedAt": "2026-10-16 17:15:00",
+      "customerNotes": "Remitted via Barclays corporate priority wire today. Please verify and clear from dunning cadence.",
+      "status": "pending_review"
+    },
+    {
+      "id": "task-pop-002",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-3",
+      "debtorName": "Nordic Supply Chain AB",
+      "invoiceId": "inv-4",
+      "invoiceNumber": "INV-2026-0722",
+      "amount": 8900,
+      "currency": "EUR",
+      "paymentDate": "2026-10-14",
+      "paymentMethod": "bank_transfer",
+      "transactionReference": "SEPA-SE-449102",
+      "documentName": "Swedbank_Transfer_Receipt.pdf",
+      "documentSize": "280 KB",
+      "documentUrl": "#",
+      "submittedAt": "2026-10-14 11:00:00",
+      "customerNotes": "Full payment dispatched minus demurrage penalty agreed with David.",
+      "status": "verified",
+      "reviewedBy": "David Chen (Finance Manager)",
+      "reviewedAt": "2026-10-15 09:20:00",
+      "reviewNotes": "Verified against Swedbank clearing feed EUR 8,900. Reconciled and settled."
+    },
+    {
+      "id": "task-pop-003",
+      "organizationId": "org-acme-uk",
+      "debtorId": "deb-2",
+      "debtorName": "Vanguard Tech Solutions Ltd",
+      "invoiceId": "inv-2",
+      "invoiceNumber": "INV-2026-0814",
+      "amount": 5000,
+      "currency": "GBP",
+      "paymentDate": "2026-10-17",
+      "paymentMethod": "instant_payment",
+      "transactionReference": "FAST-PAY-77189",
+      "bankReference": "HSBC-FASTER-VANGUARD",
+      "documentName": "Screenshot_Payment_Conf.png",
+      "documentSize": "1.1 MB",
+      "documentUrl": "#",
+      "submittedAt": "2026-10-17 14:22:00",
+      "customerNotes": "Part settlement per installment plan agreement.",
+      "status": "pending_review"
+    }
+  ],
+  "bankStatementLines": [
+    {
+      "id": "stmt-line-001",
+      "organizationId": "org-acme-uk",
+      "date": "2026-10-17",
+      "description": "BACS CR APEX RETAIL REF INV-2026-0901 SETTLEMENT",
+      "reference": "BARC-UK-992140",
+      "amount": 14250,
+      "currency": "GBP",
+      "statementId": "STMT-BARC-2026-W42",
+      "status": "suggested",
+      "suggestedMatches": [
+        {
+          "targetType": "invoice",
+          "targetId": "inv-1",
+          "reference": "INV-2026-0901",
+          "debtorName": "Apex Retail Holdings PLC",
+          "amount": 14250,
+          "currency": "GBP",
+          "confidenceScore": 98,
+          "matchReasons": [
+            "Exact invoice number \"INV-2026-0901\" matched in description",
+            "Exact currency GBP match",
+            "Amount £14,250.00 matches invoice outstanding balance",
+            "Debtor legal entity \"Apex Retail Holdings\" matched"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stmt-line-002",
+      "organizationId": "org-acme-uk",
+      "date": "2026-10-16",
+      "description": "STRIPE PAYOUT BATCH CH_3N928810 VANGUARD TECH",
+      "reference": "STRIPE-PO-99120",
+      "amount": 3200,
+      "currency": "GBP",
+      "statementId": "STMT-BARC-2026-W42",
+      "status": "suggested",
+      "suggestedMatches": [
+        {
+          "targetType": "invoice",
+          "targetId": "inv-2",
+          "reference": "INV-2026-0814",
+          "debtorName": "Vanguard Tech Solutions Ltd",
+          "amount": 3200,
+          "currency": "GBP",
+          "confidenceScore": 78,
+          "matchReasons": [
+            "Customer name \"Vanguard Tech\" identified in payment gateway feed",
+            "Partial amount matches within invoice open balance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stmt-line-003",
+      "organizationId": "org-acme-uk",
+      "date": "2026-10-15",
+      "description": "TRANSFER IN UNKNOWN REMITTANCE 882194",
+      "reference": "UNKNOWN-WIRE-882194",
+      "amount": 1200,
+      "currency": "GBP",
+      "statementId": "STMT-BARC-2026-W42",
+      "status": "unmatched",
+      "suggestedMatches": []
+    },
+    {
+      "id": "stmt-line-004",
+      "organizationId": "org-acme-uk",
+      "date": "2026-10-14",
+      "description": "SEPA CREDIT NORDIC SUPPLY SWEDBANK REF INV-2026-0722",
+      "reference": "SEPA-SE-449102",
+      "amount": 8900,
+      "currency": "EUR",
+      "statementId": "STMT-HSBC-2026-OCT",
+      "status": "matched",
+      "matchedPaymentId": "pay-sample-02",
+      "matchedAt": "2026-10-15 09:20:00",
+      "matchedBy": "David Chen"
+    }
+  ],
+  "reconciliationRecords": [
+    {
+      "id": "recon-001",
+      "organizationId": "org-acme-uk",
+      "statementLineId": "stmt-line-004",
+      "statementLineRef": "SEPA-SE-449102",
+      "paymentId": "pay-sample-02",
+      "invoiceId": "inv-4",
+      "amount": 8900,
+      "currency": "EUR",
+      "matchedBy": "David Chen (Finance Manager)",
+      "matchedAt": "2026-10-15 09:20:00",
+      "confidenceLevel": "high",
+      "decisionNotes": "Verified against Swedbank clearing advice and agreed demurrage credit note."
+    }
+  ],
+  "paymentMethodsConfig": [
+    {
+      "id": "bank_transfer",
+      "name": "Bank Transfer / Wire",
+      "code": "bank_transfer",
+      "isEnabled": true,
+      "clearingDays": 1,
+      "requiresProofOfPayment": true,
+      "description": "Direct BACS, CHAPS, Fedwire, or SEPA bank wire transfers"
+    },
+    {
+      "id": "card_payment",
+      "name": "Card Payment / Online Gateway",
+      "code": "card_payment",
+      "isEnabled": true,
+      "clearingDays": 0,
+      "requiresProofOfPayment": false,
+      "description": "Visa, Mastercard, Amex processed via Stripe / Adyen"
+    },
+    {
+      "id": "instant_payment",
+      "name": "Instant Electronic Payment",
+      "code": "instant_payment",
+      "isEnabled": true,
+      "clearingDays": 0,
+      "requiresProofOfPayment": false,
+      "description": "UK Faster Payments, Pix, UPI, or instant SEPA"
+    },
+    {
+      "id": "direct_debit",
+      "name": "Direct Debit / ACH Mandate",
+      "code": "direct_debit",
+      "isEnabled": true,
+      "clearingDays": 3,
+      "requiresProofOfPayment": false,
+      "description": "BACS Direct Debit, SEPA Direct Debit, and US ACH pulls"
+    },
+    {
+      "id": "cash",
+      "name": "Cash at Counter / Bank Branch",
+      "code": "cash",
+      "isEnabled": false,
+      "clearingDays": 0,
+      "requiresProofOfPayment": true,
+      "description": "Physical cash settlements requiring bank deposit receipt"
+    },
+    {
+      "id": "custom",
+      "name": "Organization Custom Clearing",
+      "code": "custom",
+      "isEnabled": true,
+      "clearingDays": 2,
+      "requiresProofOfPayment": true,
+      "description": "Custom trade finance, letters of credit, or escrow settlements"
+    }
+  ],
+  "scheduledReminders": [
+    {
+      "id": "rem-sched-001",
+      "organizationId": "org-acme-uk",
+      "invoiceId": "inv-1",
+      "invoiceNumber": "INV-2026-0901",
+      "debtorId": "deb-1",
+      "debtorName": "Apex Retail Holdings PLC",
+      "debtorEmail": "accounts.payable@apexretailgroup.co.uk",
+      "workflowId": "wf-std-b2b",
+      "workflowName": "Standard B2B Commercial Cadence",
+      "stepId": "step-4-second-overdue",
+      "stageName": "Second Overdue Reminder",
+      "dayOffset": 14,
+      "channel": "email",
+      "scheduledFor": "2026-10-19",
+      "status": "scheduled",
+      "idempotencyKey": "idem-rem-inv-1-step-4-20261019",
+      "subject": "URGENT NOTICE: Invoice INV-2026-0901 (14 Days Past Due)",
+      "body": "Dear Marcus Vance, Invoice INV-2026-0901 for GBP 14,250.00 remains outstanding. Please arrange remittance today to maintain account standing.",
+      "recipient": "accounts.payable@apexretailgroup.co.uk",
+      "amountDue": 14250,
+      "currency": "GBP",
+      "daysOverdue": 17
+    },
+    {
+      "id": "rem-sched-002",
+      "organizationId": "org-acme-uk",
+      "invoiceId": "inv-2",
+      "invoiceNumber": "INV-2026-0814",
+      "debtorId": "deb-2",
+      "debtorName": "Vanguard Tech Solutions Ltd",
+      "debtorEmail": "billing@vanguardtech.co.uk",
+      "workflowId": "wf-std-b2b",
+      "workflowName": "Standard B2B Commercial Cadence",
+      "stepId": "step-5-formal-followup",
+      "stageName": "Formal Follow-Up",
+      "dayOffset": 30,
+      "channel": "formal_letter",
+      "scheduledFor": "2026-10-18",
+      "status": "pending_approval",
+      "idempotencyKey": "idem-rem-inv-2-step-5-20261018",
+      "subject": "FORMAL COLLECTION FOLLOW-UP: Overdue Balance INV-2026-0814",
+      "body": "Formal notice is hereby served that Invoice INV-2026-0814 for GBP 8,500.00 is 35 days overdue. Statutory late payment interest has commenced accrual in accordance with agreed commercial terms.",
+      "recipient": "billing@vanguardtech.co.uk",
+      "amountDue": 8500,
+      "currency": "GBP",
+      "daysOverdue": 35
+    },
+    {
+      "id": "rem-sched-003",
+      "organizationId": "org-acme-uk",
+      "invoiceId": "inv-3",
+      "invoiceNumber": "INV-2026-0715",
+      "debtorId": "deb-3",
+      "debtorName": "Nordic Supply Chain AB",
+      "debtorEmail": "ap@nordicsupply.se",
+      "workflowId": "wf-std-b2b",
+      "workflowName": "Standard B2B Commercial Cadence",
+      "stepId": "step-3-first-overdue",
+      "stageName": "First Overdue Reminder",
+      "dayOffset": 7,
+      "channel": "email",
+      "scheduledFor": "2026-10-15",
+      "executedAt": "2026-10-15 08:00:00",
+      "status": "suppressed",
+      "idempotencyKey": "idem-rem-inv-3-step-3-20261015",
+      "subject": "OVERDUE: Invoice INV-2026-0715",
+      "body": "Courtesy reminder regarding invoice balance.",
+      "recipient": "ap@nordicsupply.se",
+      "amountDue": 5400,
+      "currency": "EUR",
+      "daysOverdue": 12,
+      "suppressionReason": "Active dispute pause exists (Demurrage Investigation opened)"
+    }
+  ],
+  "emailConfig": {
+    "id": "cfg-email-001",
+    "organizationId": "org-acme-uk",
+    "provider": "sendgrid",
+    "providerName": "SendGrid Transactional Email API",
+    "apiKeyMasked": "SG.982***014x",
+    "apiEndpoint": "https://api.sendgrid.com/v3/mail/send",
+    "verifiedSenders": [
+      {
+        "email": "billing@acmelogistics.co.uk",
+        "name": "Acme Logistics Billing",
+        "status": "verified",
+        "dkimStatus": "valid",
+        "spfStatus": "valid",
+        "isDefault": true
+      },
+      {
+        "email": "collections@acmelogistics.co.uk",
+        "name": "Acme Credit Control",
+        "status": "verified",
+        "dkimStatus": "valid",
+        "spfStatus": "valid",
+        "isDefault": false
+      },
+      {
+        "email": "finance-manager@acmelogistics.co.uk",
+        "name": "David Chen (Finance)",
+        "status": "pending",
+        "dkimStatus": "pending",
+        "spfStatus": "pending",
+        "isDefault": false
+      }
+    ],
+    "replyToAddress": "ar-replies@acmelogistics.co.uk",
+    "branding": {
+      "logoUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=120&auto=format&fit=crop&q=80",
+      "primaryColor": "#4f46e5",
+      "companyHeader": "Acme Commercial Logistics PLC — Accounts Receivable & Credit Control",
+      "footerNote": "Acme Commercial Logistics PLC • Registered in England & Wales #09812401 • VAT #GB 992 104 22 • 100 London Wall, London EC2M 5SR",
+      "complianceDisclaimer": "This electronic transmission contains formal accounts receivable documentation. If settlement has recently been dispatched, please confirm via our online portal."
+    },
+    "retryPolicy": {
+      "maxAttempts": 3,
+      "retryIntervalHours": 4,
+      "backoffStrategy": "exponential"
+    },
+    "webhookEndpoint": "/api/integrations/email/webhook",
+    "webhookSigningSecret": "whsec_99a81b72c4e098df",
+    "isConfigured": true,
+    "isValidated": true,
+    "lastValidatedAt": "2026-10-18 07:15:00",
+    "validationDetails": "SMTP Handshake 250 OK • TLS 1.3 Cipher Verified • SPF/DKIM DNS Records Validated"
+  },
+  "emailSuppressions": [
+    {
+      "id": "supp-001",
+      "organizationId": "org-acme-uk",
+      "email": "bounce.test@invalid-domain-demo.com",
+      "reason": "hard_bounce",
+      "addedAt": "2026-10-12 14:20:00",
+      "source": "SendGrid Webhook (550 5.1.1 Host lookup failed)",
+      "details": "Remote mail server permanently rejected recipient address."
+    },
+    {
+      "id": "supp-002",
+      "organizationId": "org-acme-uk",
+      "email": "optout.supplier@client-corp.co.uk",
+      "reason": "unsubscribe",
+      "addedAt": "2026-10-14 09:15:00",
+      "source": "Debtor Portal Opt-out link",
+      "details": "Customer requested communications via physical letter or portal only."
+    },
+    {
+      "id": "supp-003",
+      "organizationId": "org-acme-uk",
+      "email": "spam.filter@enterprise-partner.org",
+      "reason": "spam_complaint",
+      "addedAt": "2026-10-16 11:45:00",
+      "source": "Feedback Loop (FBL) Spam Report",
+      "details": "Automatically suppressed following user spam classification."
+    }
+  ],
+  "emailTemplates": [
+    {
+      "id": "tmpl-em-01",
+      "organizationId": "org-acme-uk",
+      "name": "Courtesy Notice (Pre-Due)",
+      "code": "courtesy_pre_due",
+      "subject": "Upcoming Invoice Reminder: {{invoiceNumber}} (Due {{dueDate}})",
+      "plainText": "Dear {{contactName}},\n\nThis is a courtesy reminder that Invoice {{invoiceNumber}} for {{amountDue}} is due on {{dueDate}}.\n\nPlease remit payment to ensure uninterrupted commercial terms.\nSecure payment link: {{paymentLink}}\n\nSincerely,\n{{organizationName}} Accounts Receivable",
+      "htmlContent": "<p>Dear <strong>{{contactName}}</strong>,</p><p>This is a courtesy reminder that Invoice <strong>{{invoiceNumber}}</strong> for <strong>{{amountDue}}</strong> is scheduled for payment on <strong>{{dueDate}}</strong>.</p><p><a href=\"{{paymentLink}}\">Click here to access your secure invoice & payment portal</a></p>",
+      "variables": [
+        "contactName",
+        "customerName",
+        "invoiceNumber",
+        "amountDue",
+        "dueDate",
+        "paymentLink",
+        "organizationName"
+      ],
+      "category": "pre_due",
+      "isDefault": true,
+      "updatedAt": "2026-10-17 10:00:00"
+    },
+    {
+      "id": "tmpl-em-02",
+      "organizationId": "org-acme-uk",
+      "name": "Invoice Due Today Notice",
+      "code": "due_date_today",
+      "subject": "PAYMENT DUE TODAY: Invoice {{invoiceNumber}} - {{customerName}}",
+      "plainText": "Dear {{contactName}},\n\nInvoice {{invoiceNumber}} for {{amountDue}} is due today, {{dueDate}}.\n\nImmediate payment portal: {{paymentLink}}\nBank Transfer Details:\nIBAN: {{bankIban}}\n\n{{organizationName}} Credit Operations",
+      "htmlContent": "<p>Dear <strong>{{contactName}}</strong>,</p><p>Invoice <strong>{{invoiceNumber}}</strong> with an outstanding balance of <strong>{{amountDue}}</strong> matures today, <strong>{{dueDate}}</strong>.</p>",
+      "variables": [
+        "contactName",
+        "customerName",
+        "invoiceNumber",
+        "amountDue",
+        "dueDate",
+        "paymentLink",
+        "bankIban",
+        "organizationName"
+      ],
+      "category": "due_date",
+      "isDefault": true,
+      "updatedAt": "2026-10-17 10:00:00"
+    },
+    {
+      "id": "tmpl-em-03",
+      "organizationId": "org-acme-uk",
+      "name": "Overdue Statement & Demand",
+      "code": "overdue_statement",
+      "subject": "OVERDUE NOTICE: Invoice {{invoiceNumber}} ({{daysOverdue}} Days Delinquent)",
+      "plainText": "Dear {{contactName}},\n\nDespite previous notices, Invoice {{invoiceNumber}} for {{amountDue}} remains unpaid and is now {{daysOverdue}} days overdue.\n\nPlease remit immediately to avoid commercial credit review:\n{{paymentLink}}\n\nCredit Control Team, {{organizationName}}",
+      "htmlContent": "<p>Dear <strong>{{contactName}}</strong>,</p><p>Invoice <strong>{{invoiceNumber}}</strong> for <strong>{{amountDue}}</strong> is now <strong>{{daysOverdue}} days overdue</strong>.</p>",
+      "variables": [
+        "contactName",
+        "customerName",
+        "invoiceNumber",
+        "amountDue",
+        "daysOverdue",
+        "paymentLink",
+        "organizationName"
+      ],
+      "category": "overdue",
+      "isDefault": true,
+      "updatedAt": "2026-10-17 10:00:00"
+    },
+    {
+      "id": "tmpl-em-04",
+      "organizationId": "org-acme-uk",
+      "name": "Payment Receipt Confirmation",
+      "code": "payment_receipt",
+      "subject": "Remittance Receipt: {{paymentReference}} - {{organizationName}}",
+      "plainText": "Dear {{customerName}},\n\nWe acknowledge receipt of {{amountPaid}} allocated against Invoice {{invoiceNumber}} on {{paymentDate}}.\n\nRemaining Balance: {{remainingBalance}}\n\nThank you,\n{{organizationName}} Treasury Operations",
+      "htmlContent": "<p>Dear <strong>{{customerName}}</strong>,</p><p>We acknowledge settlement receipt of <strong>{{amountPaid}}</strong> on {{paymentDate}}.</p>",
+      "variables": [
+        "customerName",
+        "paymentReference",
+        "amountPaid",
+        "invoiceNumber",
+        "paymentDate",
+        "remainingBalance",
+        "organizationName"
+      ],
+      "category": "payment_receipt",
+      "isDefault": true,
+      "updatedAt": "2026-10-17 10:00:00"
+    }
+  ],
+  "whatsappConfig": {
+    "id": "cfg-wa-001",
+    "organizationId": "org-acme-uk",
+    "provider": "meta_cloud_api",
+    "providerName": "Meta WhatsApp Business Cloud API",
+    "wabaId": "WABA_882910482019",
+    "phoneNumberId": "PNID_10928374619",
+    "displayPhoneNumber": "+44 20 7946 0999",
+    "displayName": "Acme Logistics AR Department",
+    "apiKeyMasked": "EAAQ***019b",
+    "webhookVerificationToken": "cnt_wa_token_991823",
+    "isConfigured": true,
+    "isValidated": true,
+    "status": "active",
+    "lastValidatedAt": "2026-10-18 07:10:00",
+    "validationDetails": "Meta Graph API v20.0 Verified • Phone Connected & Verified • Webhook Subscription Active",
+    "policyCompliance": {
+      "requiresApprovedTemplateOutside24hWindow": true,
+      "enforceCustomerConsent": true,
+      "allowSessionFreeformWithin24h": true,
+      "customerServiceWindowHours": 24
+    }
+  },
+  "whatsappTemplates": [
+    {
+      "id": "wa-tmpl-01",
+      "organizationId": "org-acme-uk",
+      "templateName": "payment_reminder_utility_v1",
+      "metaTemplateId": "meta_tmp_991820",
+      "category": "UTILITY",
+      "language": "en_GB",
+      "status": "APPROVED",
+      "bodyText": "Hello {{1}}, Invoice {{2}} for {{3}} from {{4}} is due on {{5}}. You can view invoice details and settle securely online here: {{6}}. Thank you!",
+      "parameters": [
+        "Customer Contact",
+        "Invoice Number",
+        "Amount Due",
+        "Creditor Name",
+        "Due Date",
+        "Payment URL"
+      ],
+      "quickReplyButtons": [
+        "Pay Now Online",
+        "Request Callback",
+        "Raise Query"
+      ],
+      "lastApprovedAt": "2026-09-10 14:00:00"
+    },
+    {
+      "id": "wa-tmpl-02",
+      "organizationId": "org-acme-uk",
+      "templateName": "overdue_notice_formal_v2",
+      "metaTemplateId": "meta_tmp_991821",
+      "category": "UTILITY",
+      "language": "en_GB",
+      "status": "APPROVED",
+      "bodyText": "Notice from {{1}}: Invoice {{2}} for {{3}} is now {{4}} days overdue. Please remit today or contact our credit control team to confirm payment status: {{5}}.",
+      "parameters": [
+        "Creditor Name",
+        "Invoice Number",
+        "Amount Due",
+        "Days Overdue",
+        "Payment Portal Link"
+      ],
+      "quickReplyButtons": [
+        "I Have Paid",
+        "Promise to Pay",
+        "Contact Finance"
+      ],
+      "lastApprovedAt": "2026-09-12 11:30:00"
+    },
+    {
+      "id": "wa-tmpl-03",
+      "organizationId": "org-acme-uk",
+      "templateName": "instant_payment_receipt_v1",
+      "metaTemplateId": "meta_tmp_991822",
+      "category": "UTILITY",
+      "language": "en_GB",
+      "status": "APPROVED",
+      "bodyText": "Thank you {{1}}! We have confirmed receipt of {{2}} allocated to Invoice {{3}}. Your updated statement is available here: {{4}}.",
+      "parameters": [
+        "Customer Name",
+        "Amount Received",
+        "Invoice Number",
+        "Portal Receipt URL"
+      ],
+      "quickReplyButtons": [
+        "Download Receipt",
+        "View Statement"
+      ],
+      "lastApprovedAt": "2026-09-15 16:45:00"
+    }
+  ],
+  "prioritizationWeights": {
+    "balanceWeight": 2.5,
+    "daysOverdueWeight": 3,
+    "brokenPromiseWeight": 25,
+    "repeatedLateWeight": 20,
+    "staleContactWeight": 15,
+    "disputeAdjustment": 10,
+    "accountImportanceWeight": 20,
+    "highValueThreshold": 10000,
+    "recentlyOverdueDays": 14,
+    "staleContactDays": 10
+  },
+  "collectionTasks": [
+    {
+      "id": "task-001",
+      "organizationId": "org-acme-uk",
+      "title": "Review broken payment promise remittance trace",
+      "debtorId": "deb-1",
+      "debtorName": "Apex Retail Holdings PLC",
+      "invoiceId": "inv-1",
+      "invoiceNumber": "INV-2026-0901",
+      "taskType": "confirm_payment_promise",
+      "assignedUserId": "usr-1",
+      "assignedUserName": "Sarah Miller",
+      "assignedUserRole": "Credit Controller",
+      "dueDate": "2026-10-19",
+      "priority": "urgent",
+      "status": "pending",
+      "notes": "Promise of £11,900 due on 2026-10-15 not identified in Barclays clearing feed. Check with AP director Marcus Vance.",
+      "reminderAt": "2026-10-19 09:30",
+      "createdAt": "2026-10-16 08:30:00",
+      "createdBy": "Sarah Miller"
+    },
+    {
+      "id": "task-002",
+      "organizationId": "org-acme-uk",
+      "title": "Call customer regarding 64-day overdue balance",
+      "debtorId": "deb-1",
+      "debtorName": "Apex Retail Holdings PLC",
+      "invoiceId": "inv-1",
+      "invoiceNumber": "INV-2026-0891",
+      "taskType": "call_customer",
+      "assignedUserId": "usr-1",
+      "assignedUserName": "Sarah Miller",
+      "assignedUserRole": "Credit Controller",
+      "dueDate": "2026-10-20",
+      "priority": "high",
+      "status": "pending",
+      "notes": "Account approaching formal legal escalation threshold (60+ days). Call directly before issuing statutory demand.",
+      "reminderAt": "2026-10-20 10:00",
+      "createdAt": "2026-10-17 11:00:00",
+      "createdBy": "Sarah Miller"
+    },
+    {
+      "id": "task-003",
+      "organizationId": "org-acme-uk",
+      "title": "Review bank proof of payment document",
+      "debtorId": "deb-2",
+      "debtorName": "Vanguard Tech Solutions Ltd",
+      "invoiceId": "inv-2",
+      "invoiceNumber": "INV-2026-0814",
+      "taskType": "review_payment_evidence",
+      "assignedUserId": "usr-4",
+      "assignedUserName": "James Wilson",
+      "assignedUserRole": "Credit Collector",
+      "dueDate": "2026-10-19",
+      "priority": "high",
+      "status": "in_progress",
+      "notes": "Uploaded HSBC Faster Payment receipt of £3,200 pending validation against clearing feed.",
+      "reminderAt": "2026-10-19 14:00",
+      "createdAt": "2026-10-17 14:30:00",
+      "createdBy": "Debtor Portal (System)"
+    },
+    {
+      "id": "task-004",
+      "organizationId": "org-acme-uk",
+      "title": "Mediate cold-chain demurrage dispute claim",
+      "debtorId": "deb-3",
+      "debtorName": "Nordic Supply Chain AB",
+      "invoiceId": "inv-105",
+      "invoiceNumber": "INV-2026-0810",
+      "taskType": "resolve_dispute",
+      "assignedUserId": "usr-3",
+      "assignedUserName": "Oliver Stone",
+      "assignedUserRole": "Credit Operations Analyst",
+      "dueDate": "2026-10-22",
+      "priority": "high",
+      "status": "in_progress",
+      "notes": "Review terminal telematics and driver log regarding Gothenburg vessel congestion.",
+      "reminderAt": "2026-10-22 09:00",
+      "createdAt": "2026-09-02 09:30:00",
+      "createdBy": "Oliver Stone"
+    },
+    {
+      "id": "task-005",
+      "organizationId": "org-acme-uk",
+      "title": "Request NHS Trust purchase order mandate reference",
+      "debtorId": "deb-4",
+      "debtorName": "Horizon Medical Equipment Ltd",
+      "invoiceId": "inv-106",
+      "invoiceNumber": "INV-2026-0612",
+      "taskType": "request_missing_documents",
+      "assignedUserId": "usr-4",
+      "assignedUserName": "James Wilson",
+      "assignedUserRole": "Credit Collector",
+      "dueDate": "2026-10-21",
+      "priority": "urgent",
+      "status": "pending",
+      "notes": "Invoice cannot clear public sector procurement without NHS Trust PO matching face.",
+      "reminderAt": "2026-10-21 11:30",
+      "createdAt": "2026-10-11 14:15:00",
+      "createdBy": "James Wilson"
+    },
+    {
+      "id": "task-006",
+      "organizationId": "org-acme-uk",
+      "title": "Escalate uncollectible long-overdue debt to Finance Director",
+      "debtorId": "deb-4",
+      "debtorName": "Horizon Medical Equipment Ltd",
+      "invoiceId": "inv-106",
+      "invoiceNumber": "INV-2026-0612",
+      "taskType": "escalate_to_management",
+      "assignedUserId": "usr-2",
+      "assignedUserName": "David Chen",
+      "assignedUserRole": "Finance Manager",
+      "dueDate": "2026-10-24",
+      "priority": "medium",
+      "status": "pending",
+      "notes": "Evaluate statutory pre-action legal notice versus commercial mediation.",
+      "createdAt": "2026-10-12 16:50:00",
+      "createdBy": "Alice Morgan"
+    },
+    {
+      "id": "task-007",
+      "organizationId": "org-acme-uk",
+      "title": "Reconcile Swedbank SEPA clearing wire",
+      "debtorId": "deb-3",
+      "debtorName": "Nordic Supply Chain AB",
+      "invoiceId": "inv-4",
+      "invoiceNumber": "INV-2026-0722",
+      "taskType": "reconcile_transaction",
+      "assignedUserId": "usr-2",
+      "assignedUserName": "David Chen",
+      "assignedUserRole": "Finance Manager",
+      "dueDate": "2026-10-15",
+      "priority": "low",
+      "status": "completed",
+      "notes": "Completed allocation of EUR 8,900 SEPA wire to invoice INV-2026-0722.",
+      "completedAt": "2026-10-15 09:20:00",
+      "completedBy": "David Chen",
+      "outcomeNotes": "Allocated wire transaction against agreed invoice balance.",
+      "createdAt": "2026-10-14 10:00:00",
+      "createdBy": "David Chen"
+    }
+  ],
+  "automationRules": [
+    {
+      "id": "rule-001",
+      "organizationId": "org-acme-uk",
+      "name": "High-Value Overdue Auto-Escalation",
+      "description": "Automatically creates an urgent controller call task and alerts the Finance Director when an undisputed debt over £5,000 exceeds 14 days overdue.",
+      "category": "delinquency",
+      "isActive": true,
+      "version": 2,
+      "triggerType": "invoice_overdue",
+      "triggerConfig": {
+        "overdueDaysThreshold": 14
+      },
+      "conditions": [
+        {
+          "id": "cond-1",
+          "field": "days_overdue",
+          "operator": "greater_than_or_equal",
+          "value": 14,
+          "logicalOperator": "AND"
+        },
+        {
+          "id": "cond-2",
+          "field": "outstanding_amount",
+          "operator": "greater_than_or_equal",
+          "value": 5000,
+          "logicalOperator": "AND"
+        },
+        {
+          "id": "cond-3",
+          "field": "dispute_status",
+          "operator": "equals",
+          "value": "none",
+          "logicalOperator": "AND"
+        },
+        {
+          "id": "cond-4",
+          "field": "account_hold_status",
+          "operator": "not_equals",
+          "value": "on_hold"
+        }
+      ],
+      "actions": [
+        {
+          "id": "act-1",
+          "actionType": "create_followup_task",
+          "parameters": {
+            "taskTitle": "Urgent High-Value Delinquency Call",
+            "taskType": "call_customer",
+            "priority": "urgent",
+            "dueOffsetDays": 1,
+            "assigneeName": "Sarah Miller",
+            "customNote": "Direct phone conciliation required for exposure exceeding £5,000 threshold."
+          }
+        },
+        {
+          "id": "act-2",
+          "actionType": "generate_ai_draft",
+          "parameters": {
+            "tone": "firm_overdue",
+            "channel": "email",
+            "customNote": "Prepare formal executive escalation draft for controller review."
+          }
+        },
+        {
+          "id": "act-3",
+          "actionType": "notify_staff_member",
+          "parameters": {
+            "notificationRecipient": "Alice Morgan (Finance Director)",
+            "notificationMessage": "High-value customer invoice exceeded 14-day threshold. Direct outreach queued."
+          }
+        }
+      ],
+      "safety": {
+        "isTestMode": false,
+        "duplicatePreventionCooldownHours": 48,
+        "maxRetries": 2,
+        "retryBackoffSeconds": 30,
+        "preventInfiniteLoops": true,
+        "requiresHighVolumeConfirmation": true,
+        "highVolumeThreshold": 10
+      },
+      "versionsHistory": [
+        {
+          "version": 1,
+          "updatedAt": "2026-09-10 10:00:00",
+          "updatedBy": "Alice Morgan",
+          "changelog": "Initial workflow rule creation for 14-day escalation.",
+          "triggerType": "invoice_overdue",
+          "conditionsCount": 2,
+          "actionsCount": 2
+        },
+        {
+          "version": 2,
+          "updatedAt": "2026-10-01 14:30:00",
+          "updatedBy": "David Chen",
+          "changelog": "Added dispute status check and duplicate prevention cooldown.",
+          "triggerType": "invoice_overdue",
+          "conditionsCount": 4,
+          "actionsCount": 3
+        }
+      ],
+      "createdAt": "2026-09-10 10:00:00",
+      "createdBy": "Alice Morgan",
+      "updatedAt": "2026-10-01 14:30:00",
+      "lastExecutedAt": "2026-10-18 09:15:22",
+      "executionCount": 14,
+      "successCount": 14,
+      "failureCount": 0
+    },
+    {
+      "id": "rule-002",
+      "organizationId": "org-acme-uk",
+      "name": "Broken Promise Immediate Response",
+      "description": "Triggers immediately when a customer payment commitment date passes without verified settlement. Pauses electronic cadence and schedules follow-up.",
+      "category": "delinquency",
+      "isActive": true,
+      "version": 1,
+      "triggerType": "promise_missed",
+      "conditions": [
+        {
+          "id": "cond-1",
+          "field": "outstanding_amount",
+          "operator": "greater_than",
+          "value": 500,
+          "logicalOperator": "AND"
+        },
+        {
+          "id": "cond-2",
+          "field": "account_hold_status",
+          "operator": "not_equals",
+          "value": "on_hold"
+        }
+      ],
+      "actions": [
+        {
+          "id": "act-1",
+          "actionType": "create_followup_task",
+          "parameters": {
+            "taskTitle": "Investigate Broken Payment Promise",
+            "taskType": "confirm_payment_promise",
+            "priority": "urgent",
+            "dueOffsetDays": 1,
+            "customNote": "Verify whether wire was initiated with bank clearing feed before re-engaging AP."
+          }
+        },
+        {
+          "id": "act-2",
+          "actionType": "pause_reminders",
+          "parameters": {
+            "customNote": "Paused automated generic cadence to allow high-touch human intervention."
+          }
+        },
+        {
+          "id": "act-3",
+          "actionType": "notify_staff_member",
+          "parameters": {
+            "notificationRecipient": "Assigned Credit Controller",
+            "notificationMessage": "Documented promise-to-pay broken. Automated notices paused; urgent task assigned."
+          }
+        }
+      ],
+      "safety": {
+        "isTestMode": false,
+        "duplicatePreventionCooldownHours": 72,
+        "maxRetries": 3,
+        "retryBackoffSeconds": 60,
+        "preventInfiniteLoops": true,
+        "requiresHighVolumeConfirmation": false,
+        "highVolumeThreshold": 10
+      },
+      "versionsHistory": [
+        {
+          "version": 1,
+          "updatedAt": "2026-09-15 11:20:00",
+          "updatedBy": "Sarah Miller",
+          "changelog": "Initial rule activation for broken promise mediation.",
+          "triggerType": "promise_missed",
+          "conditionsCount": 2,
+          "actionsCount": 3
+        }
+      ],
+      "createdAt": "2026-09-15 11:20:00",
+      "createdBy": "Sarah Miller",
+      "updatedAt": "2026-09-15 11:20:00",
+      "lastExecutedAt": "2026-10-16 11:00:10",
+      "executionCount": 6,
+      "successCount": 6,
+      "failureCount": 0
+    },
+    {
+      "id": "rule-003",
+      "organizationId": "org-acme-uk",
+      "name": "Dispute Opened Cadence Lock",
+      "description": "Mandatory statutory freeze: when a customer lodges a dispute, instantly pauses electronic reminders and queues conciliation task.",
+      "category": "dispute",
+      "isActive": true,
+      "version": 1,
+      "triggerType": "dispute_opened",
+      "conditions": [
+        {
+          "id": "cond-1",
+          "field": "dispute_status",
+          "operator": "not_equals",
+          "value": "resolved"
+        }
+      ],
+      "actions": [
+        {
+          "id": "act-1",
+          "actionType": "pause_reminders",
+          "parameters": {
+            "customNote": "Automated dunning paused pursuant to Section 15.3 statutory dispute policy."
+          }
+        },
+        {
+          "id": "act-2",
+          "actionType": "create_followup_task",
+          "parameters": {
+            "taskTitle": "Investigate Commercial Dispute Claim",
+            "taskType": "resolve_dispute",
+            "priority": "high",
+            "dueOffsetDays": 3,
+            "customNote": "Review contract line items, PO mandates, and fulfillment tickets."
+          }
+        },
+        {
+          "id": "act-3",
+          "actionType": "update_workflow_status",
+          "parameters": {
+            "newStatus": "on_hold",
+            "customNote": "Invoice status set to on_hold during active mediation."
+          }
+        }
+      ],
+      "safety": {
+        "isTestMode": false,
+        "duplicatePreventionCooldownHours": 24,
+        "maxRetries": 1,
+        "retryBackoffSeconds": 10,
+        "preventInfiniteLoops": true,
+        "requiresHighVolumeConfirmation": false,
+        "highVolumeThreshold": 10
+      },
+      "versionsHistory": [
+        {
+          "version": 1,
+          "updatedAt": "2026-09-01 08:00:00",
+          "updatedBy": "Alice Morgan",
+          "changelog": "Statutory dispute protection workflow initialized.",
+          "triggerType": "dispute_opened",
+          "conditionsCount": 1,
+          "actionsCount": 3
+        }
+      ],
+      "createdAt": "2026-09-01 08:00:00",
+      "createdBy": "Alice Morgan",
+      "updatedAt": "2026-09-01 08:00:00",
+      "lastExecutedAt": "2026-10-15 15:45:00",
+      "executionCount": 5,
+      "successCount": 5,
+      "failureCount": 0
+    },
+    {
+      "id": "rule-004",
+      "organizationId": "org-acme-uk",
+      "name": "Pre-Due Courtesy Remittance Notice",
+      "description": "Dispatches courtesy reminder with secure portal payment link 3 days prior to net maturity for corporate debtors with email consent.",
+      "category": "early_due",
+      "isActive": true,
+      "version": 1,
+      "triggerType": "invoice_approaching_due",
+      "triggerConfig": {
+        "approachingDaysOffset": 3
+      },
+      "conditions": [
+        {
+          "id": "cond-1",
+          "field": "days_overdue",
+          "operator": "less_than_or_equal",
+          "value": 0,
+          "logicalOperator": "AND"
+        },
+        {
+          "id": "cond-2",
+          "field": "outstanding_amount",
+          "operator": "greater_than",
+          "value": 200,
+          "logicalOperator": "AND"
+        },
+        {
+          "id": "cond-3",
+          "field": "communication_preference",
+          "operator": "equals",
+          "value": "email",
+          "logicalOperator": "AND"
+        },
+        {
+          "id": "cond-4",
+          "field": "dispute_status",
+          "operator": "equals",
+          "value": "none"
+        }
+      ],
+      "actions": [
+        {
+          "id": "act-1",
+          "actionType": "send_approved_reminder",
+          "parameters": {
+            "channel": "email",
+            "templateId": "tpl-friendly-predue",
+            "tone": "friendly_reminder",
+            "customNote": "Dispatch approved polite remittance notice with portal token."
+          }
+        }
+      ],
+      "safety": {
+        "isTestMode": false,
+        "duplicatePreventionCooldownHours": 72,
+        "maxRetries": 2,
+        "retryBackoffSeconds": 45,
+        "preventInfiniteLoops": true,
+        "requiresHighVolumeConfirmation": true,
+        "highVolumeThreshold": 10
+      },
+      "versionsHistory": [
+        {
+          "version": 1,
+          "updatedAt": "2026-09-12 16:00:00",
+          "updatedBy": "Sarah Miller",
+          "changelog": "Created polite courtesy pre-due automated cadence step.",
+          "triggerType": "invoice_approaching_due",
+          "conditionsCount": 4,
+          "actionsCount": 1
+        }
+      ],
+      "createdAt": "2026-09-12 16:00:00",
+      "createdBy": "Sarah Miller",
+      "updatedAt": "2026-09-12 16:00:00",
+      "lastExecutedAt": "2026-10-18 08:00:15",
+      "executionCount": 38,
+      "successCount": 38,
+      "failureCount": 0
+    },
+    {
+      "id": "rule-005",
+      "organizationId": "org-acme-uk",
+      "name": "Zero-Balance Settlement Confirmation",
+      "description": "When an invoice reaches zero balance upon verified payment, instantly dispatches formal receipt to customer and generates updated statement.",
+      "category": "payment",
+      "isActive": true,
+      "version": 1,
+      "triggerType": "balance_zero",
+      "conditions": [
+        {
+          "id": "cond-1",
+          "field": "invoice_status",
+          "operator": "equals",
+          "value": "paid"
+        }
+      ],
+      "actions": [
+        {
+          "id": "act-1",
+          "actionType": "notify_customer_payment_verified",
+          "parameters": {
+            "channel": "email",
+            "customNote": "Transmit formal receipt advice confirming zero remaining balance."
+          }
+        },
+        {
+          "id": "act-2",
+          "actionType": "generate_report",
+          "parameters": {
+            "reportFormat": "pdf",
+            "customNote": "Generate updated Statement of Account snapshot."
+          }
+        }
+      ],
+      "safety": {
+        "isTestMode": false,
+        "duplicatePreventionCooldownHours": 168,
+        "maxRetries": 1,
+        "retryBackoffSeconds": 15,
+        "preventInfiniteLoops": true,
+        "requiresHighVolumeConfirmation": false,
+        "highVolumeThreshold": 10
+      },
+      "versionsHistory": [
+        {
+          "version": 1,
+          "updatedAt": "2026-09-20 10:30:00",
+          "updatedBy": "David Chen",
+          "changelog": "Automated receipt and statement generation on zero balance.",
+          "triggerType": "balance_zero",
+          "conditionsCount": 1,
+          "actionsCount": 2
+        }
+      ],
+      "createdAt": "2026-09-20 10:30:00",
+      "createdBy": "David Chen",
+      "updatedAt": "2026-09-20 10:30:00",
+      "lastExecutedAt": "2026-10-17 16:22:45",
+      "executionCount": 21,
+      "successCount": 21,
+      "failureCount": 0
+    }
+  ],
+  "ruleExecutionLogs": [
+    {
+      "id": "exec-101",
+      "ruleId": "rule-001",
+      "ruleName": "High-Value Overdue Auto-Escalation",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-18 09:15:22",
+      "triggerType": "invoice_overdue",
+      "triggerEntityId": "inv-1",
+      "triggerEntityName": "INV-2026-0901",
+      "triggerEntityType": "Invoice",
+      "isTestRun": false,
+      "isDryRun": false,
+      "status": "success",
+      "conditionsEvaluated": [
+        {
+          "field": "days_overdue",
+          "expected": ">= 14",
+          "actual": "17",
+          "passed": true
+        },
+        {
+          "field": "outstanding_amount",
+          "expected": ">= 5000",
+          "actual": "14250",
+          "passed": true
+        },
+        {
+          "field": "dispute_status",
+          "expected": "equals none",
+          "actual": "none",
+          "passed": true
+        },
+        {
+          "field": "account_hold_status",
+          "expected": "not_equals on_hold",
+          "actual": "active",
+          "passed": true
+        }
+      ],
+      "actionsExecuted": [
+        {
+          "actionType": "create_followup_task",
+          "summary": "Created urgent call task for Sarah Miller",
+          "status": "completed"
+        },
+        {
+          "actionType": "generate_ai_draft",
+          "summary": "Prepared firm_overdue draft communication",
+          "status": "completed"
+        },
+        {
+          "actionType": "notify_staff_member",
+          "summary": "Alerted Alice Morgan (Finance Director)",
+          "status": "completed"
+        }
+      ],
+      "durationMs": 38,
+      "idempotencyKey": "idem-exec-101-inv-1"
+    },
+    {
+      "id": "exec-102",
+      "ruleId": "rule-002",
+      "ruleName": "Broken Promise Immediate Response",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-16 11:00:10",
+      "triggerType": "promise_missed",
+      "triggerEntityId": "ptp-1",
+      "triggerEntityName": "Apex Retail PLC (Promise £11,900)",
+      "triggerEntityType": "Promise",
+      "isTestRun": false,
+      "isDryRun": false,
+      "status": "success",
+      "conditionsEvaluated": [
+        {
+          "field": "outstanding_amount",
+          "expected": "> 500",
+          "actual": "11900",
+          "passed": true
+        },
+        {
+          "field": "account_hold_status",
+          "expected": "not_equals on_hold",
+          "actual": "active",
+          "passed": true
+        }
+      ],
+      "actionsExecuted": [
+        {
+          "actionType": "create_followup_task",
+          "summary": "Created follow-up task task-001 for Sarah Miller",
+          "status": "completed"
+        },
+        {
+          "actionType": "pause_reminders",
+          "summary": "Paused automated electronic cadence",
+          "status": "completed"
+        },
+        {
+          "actionType": "notify_staff_member",
+          "summary": "Alerted Credit Controller Sarah Miller",
+          "status": "completed"
+        }
+      ],
+      "durationMs": 42,
+      "idempotencyKey": "idem-exec-102-ptp-1"
+    },
+    {
+      "id": "exec-103",
+      "ruleId": "rule-004",
+      "ruleName": "Pre-Due Courtesy Remittance Notice",
+      "organizationId": "org-acme-uk",
+      "timestamp": "2026-10-18 08:00:15",
+      "triggerType": "invoice_approaching_due",
+      "triggerEntityId": "inv-3",
+      "triggerEntityName": "INV-2026-0925",
+      "triggerEntityType": "Invoice",
+      "isTestRun": false,
+      "isDryRun": false,
+      "status": "success",
+      "conditionsEvaluated": [
+        {
+          "field": "days_overdue",
+          "expected": "<= 0",
+          "actual": "0 (Due in 3 days)",
+          "passed": true
+        },
+        {
+          "field": "outstanding_amount",
+          "expected": "> 200",
+          "actual": "4600",
+          "passed": true
+        },
+        {
+          "field": "communication_preference",
+          "expected": "equals email",
+          "actual": "email",
+          "passed": true
+        },
+        {
+          "field": "dispute_status",
+          "expected": "equals none",
+          "actual": "none",
+          "passed": true
+        }
+      ],
+      "actionsExecuted": [
+        {
+          "actionType": "send_approved_reminder",
+          "summary": "Dispatched friendly courtesy email notice to ap@solarpower.co.uk",
+          "status": "completed"
+        }
+      ],
+      "durationMs": 65,
+      "idempotencyKey": "idem-exec-103-inv-3"
+    }
+  ],
+  "notificationPreferences": [
+    {
+      "userId": "usr-1",
+      "organizationId": "org-acme-uk",
+      "emailEnabled": true,
+      "emailAddress": "alice.morgan@acmelogistics.co.uk",
+      "highValueOverdueThreshold": 10000,
+      "promiseAdvanceHours": 48,
+      "digestFrequency": "immediate",
+      "quietHoursEnabled": false,
+      "quietHoursStart": "22:00",
+      "quietHoursEnd": "07:00",
+      "typesConfig": {
+        "newly_overdue_invoice": {
+          "inApp": true,
+          "email": true
+        },
+        "high_value_overdue": {
+          "inApp": true,
+          "email": true
+        },
+        "new_customer_dispute": {
+          "inApp": true,
+          "email": true
+        },
+        "failed_payment_reminder": {
+          "inApp": true,
+          "email": false
+        },
+        "incoming_customer_reply": {
+          "inApp": true,
+          "email": true
+        },
+        "upcoming_payment_promise": {
+          "inApp": true,
+          "email": true
+        },
+        "missed_payment_promise": {
+          "inApp": true,
+          "email": true
+        },
+        "uploaded_payment_evidence": {
+          "inApp": true,
+          "email": true
+        },
+        "unreconciled_payment": {
+          "inApp": true,
+          "email": false
+        },
+        "integration_failure": {
+          "inApp": true,
+          "email": true
+        },
+        "subscription_status_change": {
+          "inApp": true,
+          "email": true
+        },
+        "important_security_event": {
+          "inApp": true,
+          "email": true
+        }
+      }
+    }
+  ]
+}

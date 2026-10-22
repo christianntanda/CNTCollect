@@ -1,0 +1,161 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global default-deny safety net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Health / connection test doc
+    match /test/{docId} {
+      allow read: if true;
+    }
+
+    // --- Global Helpers ---
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Platform Super-Admin check
+    function isPlatformAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'christian.ntanda@gmail.com' ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    // Multi-tenant Organization Membership Gate
+    function isOrgMember(orgId) {
+      return isSignedIn() && (
+        isPlatformAdmin() ||
+        exists(/databases/$(database)/documents/organizations/$(orgId)/users/$(request.auth.uid)) ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.organizationId == orgId)
+      );
+    }
+
+    // --- Global Users Collection ---
+    match /users/{userId} {
+      allow get: if isValidId(userId) && isSignedIn() && (request.auth.uid == userId || isPlatformAdmin());
+      allow list: if isSignedIn() && (resource.data.id == request.auth.uid || isPlatformAdmin());
+      allow create: if isValidId(userId) && isSignedIn() && request.auth.uid == userId && incoming().id == userId;
+      allow update: if isValidId(userId) && isSignedIn() && (request.auth.uid == userId || isPlatformAdmin()) && incoming().id == existing().id;
+      allow delete: if isValidId(userId) && isPlatformAdmin();
+    }
+
+    // --- Platform Admins Registry ---
+    match /admins/{adminId} {
+      allow read: if isSignedIn();
+      allow write: if isPlatformAdmin();
+    }
+
+    // --- Multi-Tenant Organizations Root & Subcollections ---
+    match /organizations/{organizationId} {
+      allow get: if isValidId(organizationId) && isOrgMember(organizationId);
+      allow list: if isPlatformAdmin();
+      allow create: if isValidId(organizationId) && isSignedIn();
+      allow update: if isValidId(organizationId) && isOrgMember(organizationId);
+      allow delete: if isValidId(organizationId) && isPlatformAdmin();
+
+      // Debtors Register
+      match /debtors/{debtorId} {
+        allow get: if isValidId(debtorId) && isOrgMember(organizationId);
+        allow list: if isOrgMember(organizationId);
+        allow create: if isValidId(debtorId) && isOrgMember(organizationId) && incoming().organizationId == organizationId;
+        allow update: if isValidId(debtorId) && isOrgMember(organizationId) && incoming().organizationId == existing().organizationId;
+        allow delete: if isValidId(debtorId) && isOrgMember(organizationId);
+      }
+
+      // Invoices Ledger
+      match /invoices/{invoiceId} {
+        allow get: if isValidId(invoiceId) && isOrgMember(organizationId);
+        allow list: if isOrgMember(organizationId);
+        allow create: if isValidId(invoiceId) && isOrgMember(organizationId) && incoming().organizationId == organizationId;
+        allow update: if isValidId(invoiceId) && isOrgMember(organizationId) && incoming().organizationId == existing().organizationId;
+        allow delete: if isValidId(invoiceId) && isOrgMember(organizationId);
+      }
+
+      // Payments & Settlements
+      match /payments/{paymentId} {
+        allow get: if isValidId(paymentId) && isOrgMember(organizationId);
+        allow list: if isOrgMember(organizationId);
+        allow create: if isValidId(paymentId) && isOrgMember(organizationId) && incoming().organizationId == organizationId && incoming().amount > 0;
+        allow update: if isValidId(paymentId) && isOrgMember(organizationId) && incoming().organizationId == existing().organizationId;
+        allow delete: if isValidId(paymentId) && isPlatformAdmin();
+      }
+
+      // Disputes Registry
+      match /disputes/{disputeId} {
+        allow get: if isValidId(disputeId) && isOrgMember(organizationId);
+        allow list: if isOrgMember(organizationId);
+        allow create: if isValidId(disputeId) && isOrgMember(organizationId) && incoming().organizationId == organizationId;
+        allow update: if isValidId(disputeId) && isOrgMember(organizationId) && incoming().organizationId == existing().organizationId;
+        allow delete: if isValidId(disputeId) && isOrgMember(organizationId);
+      }
+
+      // Promises to Pay (PTP)
+      match /promises/{promiseId} {
+        allow get: if isValidId(promiseId) && isOrgMember(organizationId);
+        allow list: if isOrgMember(organizationId);
+        allow create: if isValidId(promiseId) && isOrgMember(organizationId) && incoming().organizationId == organizationId;
+        allow update: if isValidId(promiseId) && isOrgMember(organizationId) && incoming().organizationId == existing().organizationId;
+        allow delete: if isValidId(promiseId) && isOrgMember(organizationId);
+      }
+
+      // Dunning Escalation Workflows
+      match /dunningWorkflows/{workflowId} {
+        allow get: if isValidId(workflowId) && isOrgMember(organizationId);
+        allow list: if isOrgMember(organizationId);
+        allow create: if isValidId(workflowId) && isOrgMember(organizationId) && incoming().organizationId == organizationId;
+        allow update: if isValidId(workflowId) && isOrgMember(organizationId) && incoming().organizationId == existing().organizationId;
+        allow delete: if isValidId(workflowId) && isOrgMember(organizationId);
+      }
+
+      // Outbound Communication History (Immutable)
+      match /communications/{commId} {
+        allow get: if isValidId(commId) && isOrgMember(organizationId);
+        allow list: if isOrgMember(organizationId);
+        allow create: if isValidId(commId) && isOrgMember(organizationId) && incoming().organizationId == organizationId;
+        allow update, delete: if false;
+      }
+
+      // Credit Notes
+      match /creditNotes/{creditNoteId} {
+        allow get: if isValidId(creditNoteId) && isOrgMember(organizationId);
+        allow list: if isOrgMember(organizationId);
+        allow create: if isValidId(creditNoteId) && isOrgMember(organizationId) && incoming().organizationId == organizationId;
+        allow update: if isValidId(creditNoteId) && isOrgMember(organizationId) && incoming().organizationId == existing().organizationId;
+        allow delete: if isValidId(creditNoteId) && isPlatformAdmin();
+      }
+
+      // Compliance & Financial Audit Trail (Immutable)
+      match /auditLogs/{logId} {
+        allow get: if isValidId(logId) && isOrgMember(organizationId);
+        allow list: if isOrgMember(organizationId);
+        allow create: if isValidId(logId) && isOrgMember(organizationId) && incoming().organizationId == organizationId;
+        allow update, delete: if false;
+      }
+
+      // Organization RBAC Members
+      match /users/{orgUserId} {
+        allow get: if isValidId(orgUserId) && isOrgMember(organizationId);
+        allow list: if isOrgMember(organizationId);
+        allow create, update, delete: if isValidId(orgUserId) && isOrgMember(organizationId);
+      }
+    }
+  }
+}
